@@ -11,6 +11,7 @@
 
 }
 
+/*A MIX OF CSS STYLINGS TO SUPPORT THE BOOTSTRAP CLASSES. THIS RUNS FROM NAV TO FOOTER IN NO PERTICULAR ORDER*/
 
 nav ul li a:hover {
     color: #bf8417 !important;
@@ -33,6 +34,44 @@ nav ul li a:focus {
 
 .navbar-toggler-icon {
     color: #bf8417 !important;
+}
+
+.fixed-position {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.8s, transform 0.8s ease;
+}
+
+.fixed-position-scrolled {
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: 0px 0px 5px 0px var(--bs-gray) !important;
+    transform: translateY(-6px) !important;
+    transition: background-color 0.3s ease-in-out !important;
+}
+
+.bg-transparent {
+    .bg-transparent {
+        background-color: transparent !important;
+        transition: background-color 0.3s ease-in-out !important;
+    }
+}
+
+.display-6 {
+    color: #bf8417 !important;
+    font-weight: medium !important;
+}
+
+.display-3 {
+    color: var(--bs-h1-text);
+}
+
+.hero-container-main,
+.about-container-main {
+    /* margin-top: 15rem !important; */
+    height: 80vh !important;
 }
 
 .home-hero-btn {
@@ -154,7 +193,7 @@ nav ul li a:focus {
         height: auto !important;
     }
 
-         .home-about-right{
-            padding-left: 3rem;
-         }
+    .home-about-right {
+        padding-left: 3rem;
+    }
 }

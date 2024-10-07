@@ -2,6 +2,7 @@ import React from "react";
 // import React, { lazy, Suspense } from "react";
 import Header from "./Header";
 import HomeHero from "./HomeHero";
+import Services from "./Services";
 import About from "./About";
 import "./Style.css";
 
@@ -19,6 +20,7 @@ const Home = () => {
       <Header />
       <HomeHero />
       <About />
+      <Services />
       {/* <Suspense fallback={<div>Loading About...</div>}>
         <HomeHero />
       </Suspense>

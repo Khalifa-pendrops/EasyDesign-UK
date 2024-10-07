@@ -4,7 +4,6 @@ import logo from "../assets/logo.png";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
-  // const [activeIndex, setActiveIndex] = useState(null);
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -14,12 +13,9 @@ function Header() {
     }
   };
 
-  // const handleActive = (index) => {
-  //   setIsActive(index);
-  // };
 
   useEffect(() => {
-    //this is the setup for the event listener on mount component
+    //this is the setup for the event listener when this component mounts
     window.addEventListener("scroll", handleScroll);
     return () => {
       //this will remove event listener when the component unmounts
@@ -28,7 +24,11 @@ function Header() {
   }, []);
 
   return (
-    <div className=" bg-transparent">
+    <div
+      className={`fixed-position ${
+        scrolled ? "fixed-position-scrolled" : "bg-transparent"
+      }`}
+    >
       <nav className="navbar navbar-expand-sm">
         <div className="container-xxl">
           <a href="#home" className="navbar-brand">

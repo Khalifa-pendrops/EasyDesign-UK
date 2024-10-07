@@ -4,14 +4,14 @@ import heroimage from "../assets/hero-image.png";
 
 function HomeHero() {
   return (
-    <div>
+    <div className="hero-container-main container-xxl d-flex justify-content-center align-items-center">
       <section
         id="home"
         className="d-flex flex-column justify-content-center align-items-center mb-4 container-xxl"
       >
-        <div className=" position-relative hero-container d-flex flex-column flex-sm-row gap-4 container-xxl">
+        <div className="hero-container d-flex flex-column flex-sm-row gap-5 container-xxl">
           <div className="hero-left d-flex flex-column justify-content-center align-items-md-start align-items-center  gap-2">
-            <h1 className="display-2 fs-1 w-sm-100 w-md-50 fw-bolder">
+            <h1 className="hero-h1 display-3 w-100 w-md-75 w-lg-50 fw-medium">
               Transform Your Online Presence
             </h1>
 

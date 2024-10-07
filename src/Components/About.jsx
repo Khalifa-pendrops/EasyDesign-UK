@@ -8,6 +8,7 @@ function About() {
   const isVisible = useOnScreen(ref, "0px");
   return (
     <div
+      className="about-container-main container-xxl d-flex justify-content-center align-items-center"
       ref={ref}
       style={{
         minHeight: "100vh",
@@ -18,7 +19,7 @@ function About() {
     >
       <section
         id="about"
-        className="home-about-div container-xxl d-flex flex-column flex-sm-row border py-4"
+        className="home-about-div container-xxl d-flex flex-column flex-sm-row gap-5"
       >
         <div className="about-hero-image-div">
           <img
@@ -29,11 +30,13 @@ function About() {
             alt="about image"
           />
         </div>
-        <div className="home-about-right" data-aos="fade-up">
+        <div
+          className="home-about-right d-flex flex-column justify-content-center align-items-center"
+          data-aos="fade-up"
+        >
           <div data-aos="fade-up">
             <h4 className="display-6 about-h4">About Us</h4>
-            <h1 className="display-2 fw-medium about-h1">
-              {" "}
+            <h1 className="display-3 fw-medium about-h1">
               Crafting Digital Experiences for Your Success
             </h1>
           </div>
@@ -45,7 +48,7 @@ function About() {
               alt="about image"
             />
           </div>
-          <p data-aos="fade-up" className="about-p">
+          <p data-aos="fade-up" className="about-p lh-lg">
             At Easy Design UK, we specialize in creating stunning,
             high-performance websites and digital solutions tailored to your
             business needs. With a team of skilled developers and designers, we
