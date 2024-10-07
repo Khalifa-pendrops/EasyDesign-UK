@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCode,
   faPaintbrush,
-  faMobile,
+  faMobileScreen,
   faMagnifyingGlass,
   faChartLine,
   faServer,
@@ -35,7 +35,7 @@ function Services() {
           data-aos="fade-up"
         >
           <h4 className="display-6">Our Services</h4>
-          <h1 className="display-2">What We Can Do For You</h1>
+          <h1 className="display-3">What We Can Do For You</h1>
           <p className="lh-lg w-50">
             At Easy Design UK, we provide a range of digital solutions tailored
             to elevate your business. Our expertise spans from web development
@@ -44,9 +44,9 @@ function Services() {
           </p>
         </div>
         <div className="d-flex flex-column gap-5">
-          <div className="services-container d-flex flex-xs-column justify-content-center align-items-center gap-4">
+          <div className="services-container d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4">
             <div
-              className="web-dev-div border border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+              className="web-dev-div border border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -54,7 +54,7 @@ function Services() {
                 <FontAwesomeIcon className="icon fs-1" icon={faCode} />
               </div>
               <h3 className="fs-4 text-center w-100">Web Development</h3>
-              <p className="text-center">
+              <p className="services-p text-center">
                 We build responsive and dynamic websites that deliver a seamless
                 user experience across all devices.
               </p>
@@ -66,7 +66,7 @@ function Services() {
             </div>
 
             <div
-              className="ui-ux-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+              className="ui-ux-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -74,7 +74,7 @@ function Services() {
                 <FontAwesomeIcon className="icon fs-1" icon={faPaintbrush} />
               </div>
               <h3 className="fs-4 text-center w-100">UI/UX Design</h3>
-              <p className="text-center">
+              <p className="services-p text-center">
                 Creating visually appealing and intuitive designs to enhance
                 user interaction and engagement on your website.
               </p>
@@ -86,15 +86,15 @@ function Services() {
             </div>
 
             <div
-              className="mobile-dev-div border border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+              className="mobile-dev-div border border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="300"
             >
               <div className="icon-div border p-5 bg-warning rounded">
-                <FontAwesomeIcon className="icon fs-1" icon={faMobile} />
+                <FontAwesomeIcon className="icon fs-1" icon={faMobileScreen} />
               </div>
               <h3 className="fs-4 text-center w-100">Mobile App Development</h3>
-              <p className="text-center">
+              <p className="services-p text-center">
                 Developing mobile applications that offer a robust and engaging
                 user experience on both iOS and Android platforms.
               </p>
@@ -106,15 +106,15 @@ function Services() {
             </div>
 
             <div
-              className="design-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+              className="design-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="400"
             >
               <div className="icon-div border p-5 bg-warning rounded">
-                <FontAwesomeIcon className="icon fs-1" icon={faMobile} />
+                <FontAwesomeIcon className="icon fs-1" icon={faMobileScreen} />
               </div>
               <h3 className="fs-4 text-center w-100">Responsive Design</h3>
-              <p className="text-center">
+              <p className="services-p text-center">
                 Mobile-first designs that look great on any device, ensuring a
                 seamless experience across platforms.
               </p>
@@ -126,9 +126,9 @@ function Services() {
             </div>
           </div>
 
-          <div className="services-container d-flex flex-xs-column justify-content-center align-items-center gap-4">
+          <div className="services-container d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4">
             <div
-              className="web-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+              className="web-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="500"
             >
@@ -139,7 +139,7 @@ function Services() {
                 />
               </div>
               <h3 className="fs-4 text-center w-100">Seo Optimization</h3>
-              <p className="text-center">
+              <p className="services-p text-center">
                 Optimizing your website to improve search engine rankings and
                 increase organic traffic to your site.
               </p>
@@ -151,7 +151,7 @@ function Services() {
             </div>
 
             <div
-              className="ui-ux-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+              className="ui-ux-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="600"
             >
@@ -159,7 +159,7 @@ function Services() {
                 <FontAwesomeIcon className="icon fs-1" icon={faChartLine} />
               </div>
               <h3 className="fs-4 text-center w-100">Digital Marketing</h3>
-              <p className="text-center">
+              <p className="services-p text-center">
                 Implementing effective digital marketing strategies to increase
                 your online visibility and drive conversions.
               </p>
@@ -171,7 +171,7 @@ function Services() {
             </div>
 
             <div
-              className="mobile-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+              className="mobile-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="700"
             >
@@ -181,7 +181,7 @@ function Services() {
               <h3 className="fs-4 text-center w-100">
                 Web Hosting & Maintenance
               </h3>
-              <p className="text-center">
+              <p className="services-p text-center">
                 Providing reliable hosting services and ongoing maintenance to
                 ensure your website runs smoothly.
               </p>
@@ -193,7 +193,7 @@ function Services() {
             </div>
 
             <div
-              className="design-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+              className="design-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="800"
             >
@@ -201,7 +201,7 @@ function Services() {
                 <FontAwesomeIcon className="icon fs-1" icon={faRocket} />
               </div>
               <h3 className="fs-4 text-center">Optimized Performance</h3>
-              <p className="text-center">
+              <p className="services-p text-center">
                 Websites optimized for speed and SEO, ensuring fast load times
                 and top search engine rankings.
               </p>

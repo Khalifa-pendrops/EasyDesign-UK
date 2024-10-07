@@ -4,6 +4,7 @@ import Header from "./Header";
 import HomeHero from "./HomeHero";
 import Services from "./Services";
 import About from "./About";
+import Features from "./Features";
 import "./Style.css";
 
 // const HomeHero = lazy(() => import("./HomeHero"));
@@ -21,6 +22,7 @@ const Home = () => {
       <HomeHero />
       <About />
       <Services />
+      <Features />
       {/* <Suspense fallback={<div>Loading About...</div>}>
         <HomeHero />
       </Suspense>

@@ -8,11 +8,16 @@
     --bs-body-text: #b7b7b7;
     --bs-feature-bg: #d1d1e0;
     --bs-footer-bg: #353f4f;
+    --bs-heart-bg: #f6f6fa;
+    --bs-circle1-bg: #f7f3fe;
+    --bs-circle2-bg: #fff6f9;
+    --bs-smallCircle-bg: #feeef3;
+    --bs-triangle-bg: #f2eabf;
+    --bs-fontIcon-bg: #9c7474;
 
 }
 
 /*A MIX OF CSS STYLINGS TO SUPPORT THE BOOTSTRAP CLASSES. THIS RUNS FROM NAV TO FOOTER IN NO PERTICULAR ORDER*/
-
 nav ul li a:hover {
     color: #bf8417 !important;
 }
@@ -52,20 +57,101 @@ nav ul li a:focus {
     transition: background-color 0.3s ease-in-out !important;
 }
 
+.hero h1,
+.hero-left p,
+.home-hero-btn {
+    opacity: 0;
+    transform: translateX(-1000px);
+    transition: opacity 0.5s ease;
+}
+
+.home-hero-image {
+    opacity: 0;
+    transform: translateX(1000px);
+    transition: opacity 0.5s ease;
+}
+
 .bg-transparent {
-    .bg-transparent {
-        background-color: transparent !important;
-        transition: background-color 0.3s ease-in-out !important;
-    }
+    background-color: transparent !important;
+    transition: background-color 0.3s ease-in-out !important;
+
 }
 
 .display-6 {
     color: #bf8417 !important;
     font-weight: medium !important;
+    font-weight: 400;
 }
 
 .display-3 {
     color: var(--bs-h1-text);
+    font-weight: 500;
+}
+
+.web-dev-div,
+.ui-ux-div,
+.mobile-dev-div,
+.design-div,
+.icon-div {
+    border-radius: 15px !important;
+}
+
+.web-dev-div:hover,
+.ui-ux-div:hover,
+.mobile-dev-div:hover,
+.design-div:hover {
+    transform: translate(1) !important;
+    background-color: #e0dcca !important;
+}
+
+.web-dev-div:hover .icon-div,
+.web-dev-div:hover .services-btn,
+.ui-ux-div:hover .icon-div,
+.ui-ux-div:hover .services-btn,
+.mobile-dev-div:hover .icon-div,
+.mobile-dev-div:hover .services-btn,
+.design-div:hover .icon-div,
+.design-div:hover .services-btn {
+    background-color: var(--bs-white) !important;
+    color: #bf8417 !important;
+
+}
+
+
+.web-dev-div:hover .services-btn:hover,
+.ui-ux-div:hover .services-btn:hover,
+.mobile-dev-div:hover .services-btn:hover,
+.design-div:hover .services-btn:hover {
+    background-color: #bf8417 !important;
+    color: #fff !important;
+}
+
+.services-p {
+    color: gray !important;
+}
+
+.icon-div {
+    background-color: var(--bs-feature-bg) !important;
+}
+
+.icon {
+    color: var(--bs-fontIcon-bg) !important;
+    background-color: transparent !important;
+}
+
+.services-btn {
+    padding: .8rem 2rem;
+    border-radius: 45px;
+    color: #bf8417 !important;
+    background-color: rgb(215, 215, 215) !important;
+    border: none;
+    cursor: pointer !important;
+    font-weight: 500;
+}
+
+.services-btn:hover {
+    background-color: #bf8417 !important;
+    color: #fff !important;
 }
 
 .hero-container-main,
@@ -145,7 +231,7 @@ nav ul li a:focus {
 }
 
 .animate-second {
-    animation: slowMove 5s infinite alternate ease-in-out 2s;
+    animation: slowMove 5s infinite alternate ease-in-out 1s;
 }
 
 @keyframes slowMove {
@@ -157,6 +243,108 @@ nav ul li a:focus {
         transform: translateX(60px);
     }
 }
+
+
+.feature-div-left {
+    width: 50%;
+    opacity: 0;
+    transform: translateX(-1000px);
+
+}
+
+.features-image {
+    opacity: 0;
+    transform: translateX(1000px);
+    transition: opacity 0.5s ease;
+}
+
+.animate-second {
+    animation: slowMove 5s infinite alternate ease-in-out 1s;
+}
+
+.toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.toggle-header-keyed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: 'box-shadow 0.3s ease',
+}
+
+
+.h5-header {
+    margin: 0;
+    color: #bf8417;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.toggle-header-keyed:focus {
+    border: 2px solid #bf8417 !important;
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(202, 160, 8, 0.25) !important;
+    background-color: yellow !important;
+}
+
+.toggle-header-icon {
+    font-size: 1.2rem;
+}
+
+.dropdown-div {
+    padding: 1rem .8rem;
+    border-radius: 5px;
+    border-radius: 1px solid #ccc;
+
+}
+
+.dropdown-head-text {
+    margin-bottom: .2rem;
+    font-size: 1.2rem;
+    padding: 0 .2rem;
+    color: #343536;
+}
+
+.dropdown-p-texts {
+    color: var(--bs-gray-dark);
+    font-size: .9rem;
+    line-height: 1.8;
+    padding: 0 .2rem 0 .2rem;
+    white-space: pre-line !important;
+}
+
+.dropdown-p-texts-li {
+    color: var(--bs-gray-dark);
+    font-size: .9rem;
+    line-height: 1.6;
+    padding: 0 0 0 3rem;
+}
+
+.labe-text-bold {
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.colored-arrow {
+    color: #bf8417;
+}
+
+
+
 
 @media (max-width: 576px) {
 
@@ -170,16 +358,18 @@ nav ul li a:focus {
 
     .hero-left h1,
     .about-h1 {
-        width: 50% !important;
+        width: 100% !important;
         font-size: 2.2rem !important;
+        text-align: center !important;
     }
 
     .hero-left p {
-        width: 50% !important;
+        width: 100% !important;
+        text-align: center !important;
     }
 
     .about-p {
-        width: 75%;
+        width: 100%;
     }
 
     .about-hero-image {
@@ -187,13 +377,47 @@ nav ul li a:focus {
     }
 
     .home-hero-image,
-    .show-image {
+    .show-image,
+    .features-image {
         display: block !important;
-        width: 70% !important;
+        width: 100% !important;
         height: auto !important;
     }
 
-    .home-about-right {
-        padding-left: 3rem;
+    .feature-div-left {
+        width: 100% !important;
     }
+
+    .home-about-right {
+        align-items: center;
+        text-align: center !important;
+    }
+
+    .home-service-head p {
+        width: 80% !important;
+    }
+
+    .home-service-head h1 {
+        font-size: 2rem !important;
+    }
+
+    .home-service-head h4 {
+        font-size: 1.6rem;
+    }
+
+    .fixed-position {
+        position: relative !important;
+    }
+
+    .hero-container-main,
+    .about-container-main {
+        height: auto !important;
+        margin-top: 5rem !important;
+    }
+
+    .section-container-main,
+    .feature-main-container {
+        margin-top: 5rem !important;
+    }
+
 }
