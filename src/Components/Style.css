@@ -397,6 +397,7 @@ nav ul li a:focus {
     border-bottom: 1px solid rgb(235, 235, 235);
     padding-bottom: .2rem !important;
     position: relative;
+    color: var(--bs-h1-text);
 }
 
 
@@ -640,14 +641,28 @@ footer {
 
     .hero-left h1,
     .about-h1 {
-        width: 100% !important;
-        font-size: 2.2rem !important;
+        font-size: 2rem !important;
         text-align: center !important;
     }
 
+    .hero-left h1 {
+        width: 50% !important;
+        text-align: start !important;
+    }
+
     .hero-left p {
-        width: 100% !important;
-        text-align: center !important;
+        width: 50% !important;
+        text-align: start !important;
+    }
+
+    .about-top-header h1,
+    .about-top-header h4,
+    .home-about-right p {
+        text-align: start !important;
+    }
+
+    .about-top-header h1 {
+        width: 60%;
     }
 
     .about-p {
@@ -662,7 +677,7 @@ footer {
     .show-image,
     .features-image {
         display: block !important;
-        width: 100% !important;
+        width: 80% !important;
         height: auto !important;
     }
 
@@ -671,8 +686,8 @@ footer {
     }
 
     .home-about-right {
-        align-items: center;
-        text-align: center !important;
+        align-items: start !important;
+        text-align: start !important;
     }
 
     .web-dev-div,
@@ -681,6 +696,10 @@ footer {
     .design-div,
     .icon-div {
         width: 90%;
+    }
+
+    .display-3 {
+        width: 60% !important;
     }
 
     .icon-div {
@@ -723,6 +742,13 @@ footer {
         width: 80%;
     }
 
+    .pricing-top-div h1,
+    .hero-h1 {
+        font-size: 2rem !important;
+        width: 20rem !important;
+        color: var(--bs-h1-text);
+    }
+
     .pricing-card {
         width: 100% !important;
     }
@@ -757,13 +783,17 @@ footer {
         margin-left: 2rem !important;
     }
 
+    .routed-contact-form {
+        margin-left: 0rem !important;
+    }
+
+    .routed-contact-card-head p {
+        width: 100% !important;
+    }
+
 }
 
 /*ROUTED CONTACT PAGE STARTS HERE*/
-.rounted-contect-main-container {
-    width: 100vw;
-}
-
 .routed-contact-div {
     display: flex;
     flex-direction: column;
@@ -836,17 +866,15 @@ footer {
 
 .routed-contact-card-head p {
     text-align: center;
-    width: 60rem;
     line-height: 1.6;
+    width: 60% !important;
 }
 
 .routed-contact-form {
     height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
     margin-top: 2rem;
-    margin-left: 10%;
+    gap: 4rem;
+    margin-left: 7rem;
 }
 
 .form-left {
@@ -873,7 +901,6 @@ footer {
 }
 
 .input-row {
-    display: flex;
     gap: .6rem;
     position: relative;
 }
@@ -888,16 +915,16 @@ select {
     color: #6c757d;
 }
 
-label {
+.input-row label {
     font-size: .8rem;
-    color: #6c757d;
+    color: #6c757d !important;
     position: absolute;
     left: 53.5%;
     top: 10%;
 }
 
-select .disabled-colored-select {
-    background-color: rgb(224, 224, 224);
+.input-row select .disabled-colored-select {
+    background-color: rgb(224, 224, 224) !important;
 }
 
 select:focus,
@@ -935,11 +962,7 @@ form textarea {
 }
 
 .form-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-left: 2rem;
+    gap: .4rem;
     transform: translateX(1000px);
     opacity: 0;
 }
@@ -952,9 +975,7 @@ form textarea {
 }
 
 .right-item {
-    display: flex;
-    flex-direction: column;
-    gap: .6rem;
+    gap: 0rem !important;
 }
 
 .right-item p {
@@ -964,7 +985,7 @@ form textarea {
 }
 
 .right-item span {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #6c757d;
 }
 

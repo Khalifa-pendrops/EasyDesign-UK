@@ -49,7 +49,7 @@ function RoutedContactPage() {
     <div className="rounted-contect-main-container">
       <Header />
       <div className="routed-contact-div container-fluid">
-        <div className="routed-contact-header">
+        <div className="routed-contact-header w-100">
           <h1>Contact Us</h1>
           <Link className="contact-linked" to="/">
             <p>
@@ -62,7 +62,7 @@ function RoutedContactPage() {
           <div className="routed-contact-card-head" data-aos="fade-up">
             <h4 className="display-6">Contact Us</h4>
             <h1 className="display-3">Get In Touch With Us</h1>
-            <p className="w-50">
+            <p className="w-100">
               We'd love to hear from you! Whether you have a question about our
               services, need a project quote, or just want to say hello, our
               team is here to help. Reach out to us using the form below, and
@@ -70,12 +70,15 @@ function RoutedContactPage() {
             </p>
           </div>
 
-          <div className="routed-contact-form d-flex flex-column flex-sm-row">
-            <div className="form-left" data-aos="fade-right">
+          <div className="routed-contact-form d-flex flex-column flex-sm-row justify-content-center container-xxl container-sm-fluid">
+            <div
+              className="form-left d-flex flex-column justify-content-center align-items-start container"
+              data-aos="fade-right"
+            >
               <h1>Get In Touch</h1>
               <p>Send Us a Message</p>
               <form method="post">
-                <div className="input-row">
+                <div className="input-row d-flex justify-content-center alighn-items-center">
                   <input
                     type="text"
                     name="name"
@@ -94,7 +97,7 @@ function RoutedContactPage() {
                   />
                 </div>
 
-                <div className="input-row">
+                <div className="input-row d-flex justify-content-center alighn-items-center">
                   <input
                     type="phone"
                     name="phoneNumber"
@@ -140,13 +143,16 @@ function RoutedContactPage() {
                 </button>
               </form>
             </div>
-            <div className="form-right" data-aos="fade-left">
-              <div className="form-right-item">
+            <div
+              className="form-right d-flex flex-column justify-content-center align-items-start container gap-4"
+              data-aos="fade-left"
+            >
+              <div className="form-right-item d-flex justify-content-center align-item-center">
                 <FontAwesomeIcon
                   className="routed-contact-icon"
                   icon={faLocationDot}
                 />
-                <div className="right-item">
+                <div className="right-item d-flex flex-column justify-content-center align-item-center">
                   <p>Address</p>
                   <span>Birmingham, United Kingdom</span>
                 </div>

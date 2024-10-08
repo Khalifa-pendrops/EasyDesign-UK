@@ -31,7 +31,7 @@ function About() {
           />
         </div>
         <div
-          className="home-about-right d-flex flex-column justify-content-center align-items-center"
+          className="home-about-right d-flex flex-column justify-content-center align-items-start"
           data-aos="fade-up"
         >
           <div className="about-top-header" data-aos="fade-up">

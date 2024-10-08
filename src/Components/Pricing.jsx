@@ -25,8 +25,8 @@ function Pricing() {
           className="pricing-top-div d-flex flex-column justify-content-center align-items-center text-center"
           data-aos="fade-up"
         >
-          <h4 className="display">Pricing Plan</h4>
-          <h1 className="display">Not Sure Which Plan Is For You?</h1>
+          <h4 className="">Pricing Plan</h4>
+          <h1 className="">Not Sure Which Plan Is For You?</h1>
           <p className="lh-lg w-75">
             Our pricing is flexible and tailored to each project. We cater to
             both UK and international clients, offering customized web solutions
