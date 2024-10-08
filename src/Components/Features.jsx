@@ -86,7 +86,7 @@ function Features() {
 
   return (
     <div
-      className="feature-main-container container-xxl d-flex justify-content-center align-items-center gap-5"
+      className="feature-main-container d-flex justify-content-center align-items-center gap-5"
       ref={ref}
       style={{
         minHeight: "100vh",

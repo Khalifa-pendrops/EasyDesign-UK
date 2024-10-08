@@ -46,7 +46,7 @@ function Services() {
         <div className="d-flex flex-column gap-5">
           <div className="services-container d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4">
             <div
-              className="web-dev-div border border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="web-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
               data-aos="fade-up"
               data-aos-delay="100"
             >
