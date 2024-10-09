@@ -10,7 +10,7 @@ import {
   faMobile,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-// import Location from "./Location";
+import Location from "./Location";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
@@ -48,7 +48,7 @@ function RoutedContactPage() {
   return (
     <div className="rounted-contect-main-container">
       <Header />
-      <div className="routed-contact-div container-fluid">
+      <div className="routed-contact-div container-sm-fluid">
         <div className="routed-contact-header w-100">
           <h1>Contact Us</h1>
           <Link className="contact-linked" to="/">
@@ -56,12 +56,32 @@ function RoutedContactPage() {
               Home / <span>Contact</span>
             </p>
           </Link>
+          <div
+            className="rectangles-container container-fluid"
+            data-aos="fade-up"
+          >
+            {/* THERE IS SOME ALIGNMENT ISSUES WITH THE RECTANGLES. FIX! */}
+            <div className="ractangle-div container-fluid d-flex flex-column flex-sm-row gap-sm-2 justify-content-center align-items-center">
+              <div className="rectangle rectangle-1"></div>
+              <div className="rectangle rectangle-2"></div>
+              <div className="rectangle rectangle-3"></div>
+              <div className="rectangle rectangle-4"></div>
+              <div className="rectangle rectangle-5"></div>
+              <div className="rectangle rectangle-6"></div>
+              <div className="rectangle rectangle-7"></div>
+              <div className="rectangle rectangle-8"></div>
+              <div className="rectangle rectangle-9"></div>
+              <div className="rectangle rectangle-10"></div>
+            </div>
+            <div className="circle circle-left"></div>
+            <div className="circle circle-right"></div>
+          </div>
         </div>
 
-        <div className="routed-contact-card container-fluid">
+        <div className="routed-contact-card container-fluid position-relative">
           <div className="routed-contact-card-head" data-aos="fade-up">
             <h4 className="display-6">Contact Us</h4>
-            <h1 className="display-3">Get In Touch With Us</h1>
+            <h1 className="display-3 ">Get In Touch With Us</h1>
             <p className="w-100">
               We'd love to hear from you! Whether you have a question about our
               services, need a project quote, or just want to say hello, our
@@ -203,7 +223,7 @@ function RoutedContactPage() {
             </div>
           </div>
         </div>
-        {/* <Location /> */}
+        <Location />
       </div>
       <ContactUs />
       <Footer />

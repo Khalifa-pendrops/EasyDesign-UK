@@ -17,12 +17,11 @@ function App() {
   }, []);
   return (
     <>
-      {" "}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/routedcontact" element={<RoutedContactPage />} />
       </Routes>
-      <ScrollToTop />
     </>
   );
 }

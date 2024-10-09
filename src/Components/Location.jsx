@@ -43,11 +43,10 @@ const locations = [
 
 function Location() {
   const [selected, setSelected] = useState(null);
-  const apiKey = "AIzaSyDsHpl186p12T-CXWY56QEG-3UXyjrImYM";
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   return (
     <LoadScript googleMapsApiKey={apiKey}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
-        {/* Map through the locations array to create a Marker for each location */}
         {locations.map((location, index) => (
           <Marker
             key={index}

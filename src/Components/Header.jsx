@@ -13,7 +13,6 @@ function Header() {
     }
   };
 
-
   useEffect(() => {
     //this is the setup for the event listener when this component mounts
     window.addEventListener("scroll", handleScroll);
@@ -31,9 +30,9 @@ function Header() {
     >
       <nav className="navbar navbar-expand-sm">
         <div className="container-xxl">
-          <a href="#home" className="navbar-brand">
+          <Link to="/" className="links nav-link fs-5">
             <img src={logo} alt="logo" width="60px" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -51,9 +50,9 @@ function Header() {
           >
             <ul className="navbar-nav">
               <li className="nav-item ">
-                <a className="nav-link fs-5" href="#home">
+                <Link to="/" className="links nav-link fs-5">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link fs-5" href="#about">
@@ -71,7 +70,7 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <Link top="/routedcontact" className="links nav-link fs-5">
+                <Link to="/routedcontact" className="links nav-link fs-5">
                   Contact Us
                 </Link>
               </li>

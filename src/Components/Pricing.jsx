@@ -92,7 +92,6 @@ function Pricing() {
             data-aos-delay="300"
           >
             <div className="pricing-card-top text-center">
-              {/* <div className="badge-main-div"> */}
               <div className="price-badge mobile-badge">
                 <span>Popular</span>
               </div>
