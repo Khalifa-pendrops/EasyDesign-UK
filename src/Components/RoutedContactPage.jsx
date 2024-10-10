@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,34 +16,48 @@ import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 
-function RoutedContactPage() {
+const RoutedContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [responseMessage, setResponseMessage] = useState("");
   const [selectedService, setSelectedServices] = useState(" ");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // i will add API call here or any other backend logic here to send the form data to your server.
-    console.log("Form Data Submitted:", formData);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    try {
+      const response = await axios.post(
+        "https://localhost:5174/message",
+        formData
+      );
+      console.log("Form Data Submitted:", formData);
+      setResponseMessage(response.data.message);
+    } catch (error) {
+      setResponseMessage(
+        error.response?.data?.error || "Failed to send message!"
+      );
+      setSelectedServices(
+        error.response?.data?.error ||
+          "You didn't select a service. Kindly select a service."
+      );
+    }
   };
 
   const handleChange = (e) => {
     setSelectedServices(e.target.value);
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData({
+      ...formData,
       [name]: value,
-    }));
+    });
+    // setFormData((prevData) => ({
+    //   ...prevData,
+    //   [name]: value,
+    // }));
   };
 
   return (
@@ -97,7 +112,7 @@ function RoutedContactPage() {
             >
               <h1>Get In Touch</h1>
               <p>Send Us a Message</p>
-              <form method="post">
+              <form method="post" onSubmit={handleSubmit}>
                 <div className="input-row d-flex justify-content-center alighn-items-center">
                   <input
                     type="text"
@@ -119,7 +134,7 @@ function RoutedContactPage() {
 
                 <div className="input-row d-flex justify-content-center alighn-items-center">
                   <input
-                    type="phone"
+                    type="tel"
                     name="phoneNumber"
                     value={formData.phone}
                     onChange={handleChange}
@@ -162,6 +177,8 @@ function RoutedContactPage() {
                   Send Message
                 </button>
               </form>
+              {responseMessage && <p>{responseMessage}</p>}
+              {/* {selectedService && <p>{selectedService}</p>} */}
             </div>
             <div
               className="form-right d-flex flex-column justify-content-center align-items-start container gap-4"
@@ -230,6 +247,6 @@ function RoutedContactPage() {
       <ScrollToTop />
     </div>
   );
-}
+};
 
 export default RoutedContactPage;

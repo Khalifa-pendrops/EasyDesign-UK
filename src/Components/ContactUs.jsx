@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -8,14 +9,34 @@ import {
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 function ContactUs() {
-  const [formState, setFormState] = useState({
-    email: "",
-  });
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleChange = (event) => {
-    event.preventDefault(event.target.value);
-    setFormState({ ...formState, [event.target.email]: event.target.value });
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("https://your-api-url.com/subscribe", {
+        email: email,
+        message: message,
+      });
+      setMessage(response.data.message);
+      alert("Thank you for subscribing!");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      setMessage(error.response?.data?.error || "Subscription failed!");
+    }
+    setEmail(" ");
   };
+
+  //   const [formState, setFormState] = useState({
+  //     email: "",
+  //   });
+
+  //   const handleChange = (event) => {
+  //     event.preventDefault(event.target.value);
+  //     setFormState({ ...formState, [event.target.email]: event.target.value });
+  //   };
 
   return (
     <div>
@@ -49,7 +70,7 @@ function ContactUs() {
         {/* <div className="contact-row d-flex  justify-content-between"> */}
         <div className="newsletter-div">
           <h4>Newsletter</h4>
-          <form className="d-flex flex-column">
+          <form className="d-flex flex-column" onSubmit={handleSubscribe}>
             <label className="contact-us-label">
               Subscribe to our newsletter
             </label>
@@ -59,12 +80,22 @@ function ContactUs() {
               name="email"
               value={FormData.email}
               placeholder="Enter your email"
-              onChange={handleChange}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <button className="contact-btn btn border" type="submit">
               Subscribe
             </button>
           </form>
+          {message && (
+            <p
+            //   className="color-warning text-italics btn btn-lg btn-danger"
+            //   data-bs-togggle="popover"
+            //   data-bs-title="Popover title"
+            //   data-bs-content="Sorry, your subscription was not successful. Try again please."
+            >
+              {message}
+            </p>
+          )}
         </div>
         <div className="contact-info-div">
           <h4>Contact Info</h4>
