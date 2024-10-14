@@ -22,6 +22,7 @@ const RoutedContactPage = () => {
     name: "",
     email: "",
     phone: "",
+    project: "",
     subject: "",
     message: "",
   });
@@ -31,22 +32,32 @@ const RoutedContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // i will add API call here or any other backend logic here to send the form data to your server.
-    try {
-      const response = await axios.post(
-        "https://localhost:5174/message",
-        formData
-      );
-      console.log("Form Data Submitted:", formData);
-      setResponseMessage(response.data.message);
-    } catch (error) {
-      setResponseMessage(
-        error.response?.data?.error || "Failed to send message!"
-      );
-      setSelectedServices(
-        error.response?.data?.error ||
-          "You didn't select a service. Kindly select a service."
-      );
-    }
+    // try {
+    //   const response = await axios.post(
+    //     "https://localhost:5174/message",
+    //     formData
+    //   );
+    //   console.log("Form Data Submitted:", formData);
+    //   setResponseMessage(response.data.message);
+    // }
+    axios
+      .post("http://loccalhost:5175/submit-form", formData)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error submitting form: ", error);
+      });
+
+    // .catch (error) => {
+    //   setResponseMessage(
+    //     error.response?.data?.error || "Failed to send message!"
+    //   );
+    //   setSelectedServices(
+    //     error.response?.data?.error ||
+    //       "You didn't select a service. Kindly select a service."
+    //   );
+    // }
   };
 
   const handleChange = (e) => {
@@ -148,8 +159,10 @@ const RoutedContactPage = () => {
                   </label>
                   <select
                     id="services"
-                    name="selectedService"
-                    value={selectedService}
+                    name="project"
+                    // name="selectedService"
+                    // value={selectedService}
+                    value={formData.project}
                     onChange={handleChange}
                   >
                     <option

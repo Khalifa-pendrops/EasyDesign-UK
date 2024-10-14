@@ -27,7 +27,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--bs-body-text);
+    /* color: var(--bs-body-text); */
     margin: 0;
     padding: 0;
     overflow-x: hidden;

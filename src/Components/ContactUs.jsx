@@ -8,25 +8,36 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-function ContactUs() {
+const ContactUs = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("https://your-api-url.com/subscribe", {
-        email: email,
-        message: message,
+  //   const handleSubscribe = async (e) => {
+  //     e.preventDefault();
+  //     try {
+  //       const response = await axios.post("https://your-api-url.com/subscribe", {
+  //         email: email,
+  //         message: message,
+  //       });
+  //       setMessage(response.data.message);
+  //       alert("Thank you for subscribing!");
+  //       setEmail("");
+  //       setMessage("");
+  //     } catch (error) {
+  //       setMessage(error.response?.data?.error || "Subscription failed!");
+  //     }
+  //     setEmail(" ");
+  //   };
+
+  const handleSubscribe = () => {
+    axios
+      .post("http://localhost:5175/subscribe", { email })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error subscribing: ", error);
       });
-      setMessage(response.data.message);
-      alert("Thank you for subscribing!");
-      setEmail("");
-      setMessage("");
-    } catch (error) {
-      setMessage(error.response?.data?.error || "Subscription failed!");
-    }
-    setEmail(" ");
   };
 
   //   const [formState, setFormState] = useState({
@@ -78,11 +89,11 @@ function ContactUs() {
               className="contact-input-field"
               type="email"
               name="email"
-              value={FormData.email}
+              value={email}
               placeholder="Enter your email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button className="contact-btn btn border" type="submit">
+            <button className="contact-btn btn border" type="submit" onClick={handleSubscribe}>
               Subscribe
             </button>
           </form>
@@ -120,6 +131,6 @@ function ContactUs() {
       </section>
     </div>
   );
-}
+};
 
 export default ContactUs;
