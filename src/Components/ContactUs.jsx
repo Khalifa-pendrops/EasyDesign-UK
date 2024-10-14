@@ -86,16 +86,7 @@ function ContactUs() {
               Subscribe
             </button>
           </form>
-          {message && (
-            <p
-            //   className="color-warning text-italics btn btn-lg btn-danger"
-            //   data-bs-togggle="popover"
-            //   data-bs-title="Popover title"
-            //   data-bs-content="Sorry, your subscription was not successful. Try again please."
-            >
-              {message}
-            </p>
-          )}
+          {message && <p>{message}</p>}
         </div>
         <div className="contact-info-div">
           <h4>Contact Info</h4>
@@ -114,10 +105,13 @@ function ContactUs() {
             </p>
           </div>
           <div className="social-media">
-            <a href="">
+            <a
+              href="https://www.facebook.com/share/gXcwE5qGDPkPBHPE/"
+              target="_blank"
+            >
               <FontAwesomeIcon className="social-icons" icon={faFacebook} />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/easydesign.uk" target="_blank">
               <FontAwesomeIcon className="social-icons" icon={faInstagram} />
             </a>
           </div>

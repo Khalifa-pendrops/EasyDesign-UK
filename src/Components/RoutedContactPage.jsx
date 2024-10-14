@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+// import WOW from "wowjs";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,6 +22,7 @@ const RoutedContactPage = () => {
     name: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
   });
   const [responseMessage, setResponseMessage] = useState("");
@@ -54,11 +56,11 @@ const RoutedContactPage = () => {
       ...formData,
       [name]: value,
     });
-    // setFormData((prevData) => ({
-    //   ...prevData,
-    //   [name]: value,
-    // }));
   };
+
+  //   useEffect(() => {
+  //     new WOW.WOW().init();
+  //   }, []);
 
   return (
     <div className="rounted-contect-main-container">
@@ -135,7 +137,7 @@ const RoutedContactPage = () => {
                 <div className="input-row d-flex justify-content-center alighn-items-center">
                   <input
                     type="tel"
-                    name="phoneNumber"
+                    name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Your Phone"
@@ -144,7 +146,12 @@ const RoutedContactPage = () => {
                   <label>
                     Your Project <br></br>
                   </label>
-                  <select id="services" onClick={handleChange}>
+                  <select
+                    id="services"
+                    name="selectedService"
+                    value={selectedService}
+                    onChange={handleChange}
+                  >
                     <option
                       className="disabled-colored-select"
                       value="disabled"
@@ -160,7 +167,14 @@ const RoutedContactPage = () => {
                     <option value="web-dev">Web and App Development</option>
                   </select>
                 </div>
-                <input type="text" name="text" placeholder="Subject" required />
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Subject"
+                  required
+                />
                 <textarea
                   name="message"
                   value={formData.message}
@@ -178,7 +192,6 @@ const RoutedContactPage = () => {
                 </button>
               </form>
               {responseMessage && <p>{responseMessage}</p>}
-              {/* {selectedService && <p>{selectedService}</p>} */}
             </div>
             <div
               className="form-right d-flex flex-column justify-content-center align-items-start container gap-4"
@@ -224,13 +237,19 @@ const RoutedContactPage = () => {
                     icon={faTurnUp}
                   />
                 </a>
-                <a href="">
+                <a
+                  href="https://www.facebook.com/share/gXcwE5qGDPkPBHPE/"
+                  target="_blank"
+                >
                   <FontAwesomeIcon
                     className="routed-social-icons"
                     icon={faFacebook}
                   />
                 </a>
-                <a href="">
+                <a
+                  href="https://www.instagram.com/easydesign.uk"
+                  target="_blank"
+                >
                   <FontAwesomeIcon
                     className="routed-social-icons"
                     icon={faInstagram}
