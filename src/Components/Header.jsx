@@ -28,8 +28,8 @@ function Header() {
         scrolled ? "fixed-position-scrolled" : "bg-transparent"
       }`}
     >
-      <nav className="navbar navbar-expand-sm">
-        <div className="container-xxl">
+      <nav className="navbar navbar-expand-lg border">
+        <div className="container-fluid">
           <Link to="/" className="links nav-link fs-5">
             <img src={logo} alt="logo" width="60px" />
           </Link>

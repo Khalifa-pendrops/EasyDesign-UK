@@ -7,6 +7,8 @@ import "aos/dist/aos.css";
 import Home from "./Components/Home";
 import RoutedContactPage from "./Components/RoutedContactPage";
 import ScrollToTop from "./Components/ScrollToTop";
+import SubmissionErrorPage from "./Components/SubmissionErrorPage";
+import SubscriptionErrorPage from "./Components/SubscriptionErrorPage";
 
 function App() {
   useEffect(() => {
@@ -22,6 +24,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/routedcontact" element={<RoutedContactPage />} />
       </Routes>
+      {/* <SubmissionErrorPage />
+      <SubscriptionErrorPage /> */}
     </>
   );
 }

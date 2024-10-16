@@ -558,7 +558,7 @@ form,
     padding: .6rem 6rem .6rem .6rem;
     border: 1px solid gray;
     border-radius: 8px;
-    width: 20rem;
+    width: 100% !important;
 }
 
 .contact-input-field:focus {
@@ -621,7 +621,7 @@ footer {
 
 .footer-copyright {
     width: fit-content;
-    margin-left: 9rem;
+    /* margin-left: 9rem; */
 }
 
 .footer-copyright a {
@@ -634,7 +634,7 @@ footer {
 }
 
 
-@media (max-width: 576px) {
+/* @media (max-width: 992px) {
 
     .hero-container,
     .home-about-right {
@@ -801,7 +801,7 @@ footer {
         text-align: center;
     }
 
-}
+} */
 
 /*ROUTED CONTACT PAGE STARTS HERE*/
 .routed-contact-div {
@@ -840,16 +840,19 @@ footer {
     color: var(--bs-h1-text);
     font-size: 3.8rem;
     top: 50%;
+    font-weight: 600;
 }
 
 .routed-contact-header .contact-linked {
     top: 75%;
+    left: 47%;
     text-decoration: none;
 }
 
 .routed-contact-header .contact-linked p {
     color: var(--bs-gray);
     font-weight: 500;
+    cursor: pointer;
 }
 
 .routed-contact-header .contact-linked p span {
@@ -887,13 +890,13 @@ footer {
     height: 100%;
     margin-top: 2rem;
     gap: 4rem;
-    margin-left: 7rem;
+    /* margin-left: 7rem; */
 }
 
 .form-left {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: .6rem;
+    gap: .6rem; */
     transform: translateX(-1000px);
     opacity: 0;
 }
@@ -923,17 +926,24 @@ select {
     padding: 1.4rem 5rem 1.4rem .6rem;
     border: 1px solid gray;
     border-radius: 8px;
-    width: 100%;
+    /* width: 100% !important; */
     font-size: 1rem;
     color: #6c757d;
 }
 
-.input-row label {
+label {
     font-size: .8rem;
     color: #6c757d !important;
     position: absolute;
-    left: 53.5%;
-    top: 10%;
+    left: 49.5%;
+    top: 32%;
+}
+
+@media (max-width: 992px) {
+label{
+    top: 46.9%;
+    left: 2%;
+}
 }
 
 .input-row select .disabled-colored-select {
@@ -1076,28 +1086,28 @@ form textarea {
 .rectangle-4 {
     width: 50px;
     height: 50px;
-    animation-duration: 30s;
+    animation-duration: 25s;
     border-radius: 5px;
 }
 
 .rectangle-5 {
     width: 90px;
     height: 90px;
-    animation-duration: 20s;
+    animation-duration: 30s;
     border-radius: 5px;
 }
 
 .rectangle-6 {
     width: 110px;
     height: 110px;
-    animation-duration: 15s;
+    animation-duration: 50s;
     border-radius: 5px;
 }
 
 .rectangle-7 {
     width: 100px;
     height: 100px;
-    animation-duration: 20s;
+    animation-duration: 60s;
     border-radius: 5px;
 }
 
@@ -1111,14 +1121,14 @@ form textarea {
 .rectangle-9 {
     width: 80px;
     height: 80px;
-    animation-duration: 40s;
+    animation-duration: 55s;
     border-radius: 5px;
 }
 
 .rectangle-10 {
     width: 130px;
     height: 130px;
-    animation-duration: 15s;
+    animation-duration: 50s;
     border-radius: 5px;
 }
 

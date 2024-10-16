@@ -50,12 +50,9 @@ const ContactUs = () => {
   //   };
 
   return (
-    <div>
-      <section
-        id="/contact-us"
-        className="contact-us-div  container-fluid d-flex flex-sm-row flex-column justify-content-center "
-      >
-        <div className="navigate-div d-flex flex-column justify-content-center align-items-start">
+    <div className="contact-us-div  container-fluid d-flex flex-lg-row flex-column justify-content-center">
+      <section id="/contact-us" className="container-sm d-flex flex-column flex-lg-row gap-4">
+        <div className="navigate-div d-flex flex-column justify-content-center align-items-start w-100">
           <h4>Navigation</h4>
           <ul className="text-start">
             <li>
@@ -79,27 +76,31 @@ const ContactUs = () => {
           </ul>
         </div>
         {/* <div className="contact-row d-flex  justify-content-between"> */}
-        <div className="newsletter-div">
+        <div className="newsletter-div w-100">
           <h4>Newsletter</h4>
           <form className="d-flex flex-column" onSubmit={handleSubscribe}>
             <label className="contact-us-label">
               Subscribe to our newsletter
             </label>
             <input
-              className="contact-input-field"
+              className="contact-input-field "
               type="email"
               name="email"
               value={email}
               placeholder="Enter your email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button className="contact-btn btn border" type="submit" onClick={handleSubscribe}>
+            <button
+              className="contact-btn btn border"
+              type="submit"
+              onClick={handleSubscribe}
+            >
               Subscribe
             </button>
           </form>
           {message && <p>{message}</p>}
         </div>
-        <div className="contact-info-div">
+        <div className="contact-info-div w-100 ">
           <h4>Contact Info</h4>
           <div className="contact-media">
             <p className="d-flex align-items-center">

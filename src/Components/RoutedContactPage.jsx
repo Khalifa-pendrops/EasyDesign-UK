@@ -79,11 +79,13 @@ const RoutedContactPage = () => {
       <div className="routed-contact-div container-sm-fluid">
         <div className="routed-contact-header w-100">
           <h1>Contact Us</h1>
-          <Link className="contact-linked" to="/">
-            <p>
-              Home / <span>Contact</span>
-            </p>
-          </Link>
+          <div>
+            <Link className="contact-linked" to="/">
+              <p className="">
+                Home / <span>Contact</span>
+              </p>
+            </Link>
+          </div>
           <div
             className="rectangles-container container-fluid"
             data-aos="fade-up"
@@ -118,16 +120,21 @@ const RoutedContactPage = () => {
             </p>
           </div>
 
-          <div className="routed-contact-form d-flex flex-column flex-sm-row justify-content-center container-xxl container-sm-fluid">
+          <div className="routed-contact-form d-flex flex-column flex-lg-row justify-content-center container-lg p-0">
             <div
-              className="form-left d-flex flex-column justify-content-center align-items-start container"
+              className="form-left d-flex flex-column justify-content-center align-items-start container w-100 p-0"
               data-aos="fade-right"
             >
               <h1>Get In Touch</h1>
               <p>Send Us a Message</p>
-              <form method="post" onSubmit={handleSubmit}>
-                <div className="input-row d-flex justify-content-center alighn-items-center">
+              <form
+                method="post"
+                onSubmit={handleSubmit}
+                className="container p-0"
+              >
+                <div className="input-row d-flex flex-column flex-lg-row justify-content-center alighn-items-center w-100 m-0">
                   <input
+                    className="w-100"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -145,7 +152,7 @@ const RoutedContactPage = () => {
                   />
                 </div>
 
-                <div className="input-row d-flex justify-content-center alighn-items-center">
+                <div className="input-ro d-flex flex-column flex-lg-row gap-2 justify-content-center alighn-items-center w-100 m-0">
                   <input
                     type="tel"
                     name="phone"
@@ -154,33 +161,32 @@ const RoutedContactPage = () => {
                     placeholder="Your Phone"
                     required
                   />
-                  <label>
-                    Your Project <br></br>
-                  </label>
-                  <select
-                    id="services"
-                    name="project"
-                    // name="selectedService"
-                    // value={selectedService}
-                    value={formData.project}
-                    onChange={handleChange}
-                  >
-                    <option
-                      className="disabled-colored-select"
-                      value="disabled"
+                    <label className="">
+                      Your Project <br></br>
+                    </label>
+                    <select className="w-100"
+                      id="services"
+                      name="project"
+                      value={formData.project}
+                      onChange={handleChange}
                     >
-                      Choose a service
-                    </option>
-                    <option value="branding">Business Branding</option>
-                    <option value="graphics">Graphics Design</option>
-                    <option value="social-media">
-                      Social Media Management
-                    </option>
-                    <option value="video-editing">Video Editing</option>
-                    <option value="web-dev">Web and App Development</option>
-                  </select>
-                </div>
+                      <option
+                        className="disabled-colored-select"
+                        value="disabled"
+                      >
+                        Choose a service
+                      </option>
+                      <option value="branding">Business Branding</option>
+                      <option value="graphics">Graphics Design</option>
+                      <option value="social-media">
+                        Social Media Management
+                      </option>
+                      <option value="video-editing">Video Editing</option>
+                      <option value="web-dev">Web and App Development</option>
+                    </select>
+                  </div>
                 <input
+                  className="w-100"
                   type="text"
                   name="subject"
                   value={formData.subject}
@@ -207,7 +213,7 @@ const RoutedContactPage = () => {
               {responseMessage && <p>{responseMessage}</p>}
             </div>
             <div
-              className="form-right d-flex flex-column justify-content-center align-items-start container gap-4"
+              className="form-right d-flex flex-column justify-content-center align-items-start container gap-4 m-lg-0"
               data-aos="fade-left"
             >
               <div className="form-right-item d-flex justify-content-center align-item-center">
