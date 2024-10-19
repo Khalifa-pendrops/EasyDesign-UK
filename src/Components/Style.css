@@ -104,30 +104,57 @@ nav ul li a:focus {
     font-weight: 500;
 }
 
+/* .services-container{
+    gap: 1px !important;
+} */
+
 .web-dev-div,
 .ui-ux-div,
 .mobile-dev-div,
 .design-div,
-.icon-div {
+.icon-div,
+.seo-div,
+.digital-marketing-div,
+.hosting-div,
+.performance-div {
     border-radius: 15px !important;
 }
 
 .web-dev-div:hover,
 .ui-ux-div:hover,
 .mobile-dev-div:hover,
-.design-div:hover {
+.design-div:hover,
+.seo-div:hover,
+.digital-marketing-div:hover,
+.hosting-div:hover,
+.performance-div:hover {
     transform: translate(1) !important;
     background-color: #e0dcca !important;
+}
+
+.web-dev-div,
+.ui-ux-div,
+.mobile-dev-div,
+.design-div,
+.seo-div,
+.digital-marketing-div,
+.hosting-div,
+.performance-div {
+    box-shadow: 0px 0px 8px 0px var(--bs-gray);
 }
 
 .web-dev-div:hover .icon-div,
 .web-dev-div:hover .services-btn,
 .ui-ux-div:hover .icon-div,
 .ui-ux-div:hover .services-btn,
-.mobile-dev-div:hover .icon-div,
-.mobile-dev-div:hover .services-btn,
-.design-div:hover .icon-div,
-.design-div:hover .services-btn {
+.seo-div:hover .icon-div,
+.seo-div:hover .services-btn,
+.digital-marketing-div:hover .services-btn,
+.digital-marketing-div:hover .icon-div,
+.hosting-div:hover .icon-div,
+.hosting-div:hover .services-btn,
+.performance-div:hover .icon-div,
+.performance-div:hover .services-btn {
     background-color: var(--bs-white) !important;
     color: #bf8417 !important;
 
@@ -137,7 +164,11 @@ nav ul li a:focus {
 .web-dev-div:hover .services-btn:hover,
 .ui-ux-div:hover .services-btn:hover,
 .mobile-dev-div:hover .services-btn:hover,
-.design-div:hover .services-btn:hover {
+.design-div:hover .services-btn:hover,
+.seo-div:hover .services-btn:hover,
+.digital-marketing-div:hover .services-btn:hover,
+.hosting-div:hover .services-btn:hover,
+.performance-div:hover .services-btn:hover {
     background-color: #bf8417 !important;
     color: #fff !important;
 }
@@ -533,7 +564,7 @@ form,
 }
 
 .navigate-div ul li a,
-.contact-media p {
+.contact-media a {
     display: inline-block;
     text-decoration: none;
     color: var(--bs-gray-dark);
@@ -544,7 +575,7 @@ form,
 }
 
 .navigate-div ul li a:hover,
-.contact-media p:hover {
+.contact-media a:hover {
     letter-spacing: 2px;
     color: #bf8417;
 }
@@ -587,11 +618,6 @@ form,
     gap: 0;
 }
 
-.contact-media p {
-    display: flex;
-    gap: .4rem;
-}
-
 .social-media {
     display: flex;
     gap: .6rem;
@@ -619,10 +645,10 @@ footer {
     margin-bottom: 0;
 }
 
-.footer-copyright {
+/* .footer-copyright {
     width: fit-content;
-    /* margin-left: 9rem; */
-}
+    margin-left: rem;
+} */
 
 .footer-copyright a {
     color: #bf8417;
@@ -940,10 +966,10 @@ label {
 }
 
 @media (max-width: 992px) {
-label{
-    top: 46.9%;
-    left: 2%;
-}
+    label {
+        top: 46.9%;
+        left: 2%;
+    }
 }
 
 .input-row select .disabled-colored-select {

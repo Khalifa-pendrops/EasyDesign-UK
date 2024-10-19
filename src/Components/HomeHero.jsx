@@ -9,7 +9,7 @@ function HomeHero() {
         id="home"
         className="d-flex flex-column justify-content-center align-items-center mb-4 container-xxl"
       >
-        <div className="hero-container d-flex flex-column flex-sm-row gap-5 container-xxl">
+        <div className="hero-container d-flex flex-column flex-lg-row gap-5 container-xxl">
           <div
             className="hero-left d-flex flex-column justify-content-center align-items-md-start align-items-center  gap-2"
             data-aos="fade-right"

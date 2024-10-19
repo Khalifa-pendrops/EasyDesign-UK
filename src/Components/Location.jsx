@@ -77,7 +77,11 @@ import React from "react";
 function Location() {
   return (
     <div>
-      <div className="container col-12 mb-4" data-aos="fade-Up" data-aos-delay="0.1s">
+      <div
+        className="container col-12 mb-4"
+        data-aos="fade-Up"
+        data-aos-delay="0.1s"
+      >
         <div className="rounded h-100">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155456.01736159614!2d-2.0284370255623867!3d52.49723467351431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870942d1b417173%3A0xca81fef0aeee7998!2sBirmingham%2C%20UK!5e0!3m2!1sen!2sng!4v1726748313375!5m2!1sen!2sng"

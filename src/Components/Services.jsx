@@ -17,7 +17,7 @@ function Services() {
   const isVisible = useOnScreen(ref, "-100px");
   return (
     <div
-      className="section-container-main container-xxl d-flex justify-content-center align-items-center"
+      className="section-container-main container-fluid d-flex justify-content-center align-items-center"
       ref={ref}
       style={{
         minHeight: "100vh",
@@ -28,7 +28,7 @@ function Services() {
     >
       <section
         id="services"
-        className="services-section container-xxl d-flex flex-column justify-content-center align-items-center text-center"
+        className="services-section container d-flex flex-column justify-content-center align-items-center text-center"
       >
         <div
           className="home-service-head d-flex flex-column justify-content-center align-items-center"
@@ -43,10 +43,10 @@ function Services() {
             online.
           </p>
         </div>
-        <div className="d-flex flex-column gap-5">
-          <div className="services-container d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4">
+        <div className="d-flex flex-column justify-content-center align-items-center gap-4 my-5">
+          <div className="services-container row g-0 ">
             <div
-              className="web-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="web-dev-div border d-flex  container-fluid flex-column justify-content-center align-items-center p-4 rounded gap-2 col-12 col-md-6 col-lg-4 col-xxl-3"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -66,7 +66,7 @@ function Services() {
             </div>
 
             <div
-              className="ui-ux-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="ui-ux-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 col-12 col-md-6 col-lg-4 col-xxl-3"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -86,7 +86,7 @@ function Services() {
             </div>
 
             <div
-              className="mobile-dev-div border border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="mobile-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 col-12 col-md-6 col-lg-4 col-xxl-3"
               data-aos="fade-up"
               data-aos-delay="300"
             >
@@ -106,7 +106,7 @@ function Services() {
             </div>
 
             <div
-              className="design-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="design-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 col-12 col-md-6 col-lg-4 col-xxl-3"
               data-aos="fade-up"
               data-aos-delay="400"
             >
@@ -126,9 +126,9 @@ function Services() {
             </div>
           </div>
 
-          <div className="services-container d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4">
+          <div className="services-container row g-0">
             <div
-              className="web-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="seo-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 col-12 col-md-6 col-lg-4 col-xxl-3"
               data-aos="fade-up"
               data-aos-delay="500"
             >
@@ -138,7 +138,7 @@ function Services() {
                   icon={faMagnifyingGlass}
                 />
               </div>
-              <h3 className="fs-4 text-center w-100">Seo Optimization</h3>
+              <h3 className="fs-4 text-center w-100">SEO Optimization</h3>
               <p className="services-p text-center">
                 Optimizing your website to improve search engine rankings and
                 increase organic traffic to your site.
@@ -151,7 +151,7 @@ function Services() {
             </div>
 
             <div
-              className="ui-ux-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="digital-marketing-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 col-12 col-md-6 col-lg-4 col-xxl-3"
               data-aos="fade-up"
               data-aos-delay="600"
             >
@@ -164,14 +164,14 @@ function Services() {
                 your online visibility and drive conversions.
               </p>
               <Link to="/routedcontact">
-                <button className="services-btn btn bg-warning text-white ">
+                <button className="services-btn btn bg-warning text-white">
                   Contact Us
                 </button>
               </Link>
             </div>
 
             <div
-              className="mobile-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="hosting-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 col-12 col-md-6 col-lg-4 col-xxl-3"
               data-aos="fade-up"
               data-aos-delay="700"
             >
@@ -193,14 +193,14 @@ function Services() {
             </div>
 
             <div
-              className="design-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 w-xs-25"
+              className="performance-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2 col-12 col-md-6 col-lg-4 col-xxl-3"
               data-aos="fade-up"
               data-aos-delay="800"
             >
               <div className="icon-div border p-5 bg-warning rounded">
                 <FontAwesomeIcon className="icon fs-1" icon={faRocket} />
               </div>
-              <h3 className="fs-4 text-center">Optimized Performance</h3>
+              <h3 className="fs-4 text-center w-100">Optimized Performance</h3>
               <p className="services-p text-center">
                 Websites optimized for speed and SEO, ensuring fast load times
                 and top search engine rankings.

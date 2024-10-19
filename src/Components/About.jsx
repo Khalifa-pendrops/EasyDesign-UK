@@ -19,7 +19,7 @@ function About() {
     >
       <section
         id="about"
-        className="home-about-div container-xxl d-flex flex-column justify-content-center align-items-center flex-sm-row gap-5"
+        className="home-about-div container-xxl d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5"
       >
         <div className="about-hero-image-div">
           <img
