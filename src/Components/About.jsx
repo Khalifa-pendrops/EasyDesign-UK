@@ -19,9 +19,9 @@ function About() {
     >
       <section
         id="about"
-        className="home-about-div container-xxl d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5"
+        className="home-about-div container-xxl container-md d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 px-5 py-5 px-md-0 py-md-0"
       >
-        <div className="about-hero-image-div">
+        <div className="about-hero-image-div d-none d-md-inline">
           <img
             className="about-hero-image animate-second"
             data-aos="fade-up"
@@ -40,9 +40,9 @@ function About() {
               Crafting Digital Experiences for Your Success
             </h1>
           </div>
-          <div>
+          <div className="d-inline d-md-none">
             <img
-              className="show-image animate-second d-none"
+              className="show-image animate-second"
               data-aos="fade-up"
               src={aboutus}
               alt="about image"

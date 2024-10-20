@@ -4,14 +4,14 @@ import heroimage from "../assets/hero-image.png";
 
 function HomeHero() {
   return (
-    <div className="hero-container-main container-xxl d-flex justify-content-center align-items-center">
+    <div className="hero-container-main container-fluid d-flex justify-content-center align-items-center my-sm-5">
       <section
         id="home"
         className="d-flex flex-column justify-content-center align-items-center mb-4 container-xxl"
       >
-        <div className="hero-container d-flex flex-column flex-lg-row gap-5 container-xxl">
+        <div className="hero-container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 container-xxl">
           <div
-            className="hero-left d-flex flex-column justify-content-center align-items-md-start align-items-center  gap-2"
+            className="hero-left d-flex flex-column justify-content-center align-items-md-start  gap-2 "
             data-aos="fade-right"
           >
             <h1
@@ -24,7 +24,7 @@ function HomeHero() {
             </h1>
 
             <p
-              className="w-sm-100 w-md-50 fs-5 text-muted lh-base fw-medium"
+              className="w-sm-100 w-md-25 fs-5 text-muted lh-base fw-medium"
               data-aos="fade-right"
               data-aos-duration="1000"
               data-aos-delay="10"
@@ -45,7 +45,7 @@ function HomeHero() {
             </Link>
           </div>
           <img
-            className="home-hero-image w-50 "
+            className="home-hero-image  w-50"
             data-aos="fade-left"
             src={heroimage}
             alt="hero image"

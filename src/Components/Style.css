@@ -73,6 +73,10 @@ nav ul li a:focus {
     transition: background-color 0.3s ease-in-out !important;
 }
 
+/* .hero-container-main{
+    height: 100vh !important;
+} */
+
 .hero h1,
 .hero-left p,
 .home-hero-btn {
@@ -85,6 +89,15 @@ nav ul li a:focus {
     opacity: 0;
     transform: translateX(1000px);
     transition: opacity 0.5s ease;
+}
+
+@media (max-width: 992px) {
+    .hero-container-main{
+        margin-top: 15rem !important;
+    }
+    .home-hero-image{
+        width: 100% !important;
+    }
 }
 
 .bg-transparent {
@@ -104,9 +117,7 @@ nav ul li a:focus {
     font-weight: 500;
 }
 
-/* .services-container{
-    gap: 1px !important;
-} */
+
 
 .web-dev-div,
 .ui-ux-div,
@@ -295,6 +306,16 @@ nav ul li a:focus {
     width: 50%;
     opacity: 0;
     transform: translateX(-1000px);
+
+}
+
+@media (min-width: 768px) {
+    .feature-div-left{
+        width: 70% !important;
+    }
+.feature-image{
+    width: 70% !important;
+}
 
 }
 

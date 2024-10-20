@@ -97,9 +97,9 @@ function Features() {
     >
       <section
         id="features"
-        className="features-section container-xxl d-flex flex-sm-row flex-column  justify-content-center align-items-center"
+        className="features-section container-xxl d-flex flex-xl-row flex-column  justify-content-center align-items-center my-5"
       >
-        <div className="feature-div-left border " data-aos="fade-left">
+        <div className="feature-div-left w-50 border " data-aos="fade-left">
           {divsData.map((div, index) => (
             <div
               key={index}
@@ -160,7 +160,7 @@ function Features() {
             </div>
           ))}
         </div>
-        <div className="">
+        <div className="feature-image">
           <img
             className="features-image animate-second"
             data-aos="fade-left"
