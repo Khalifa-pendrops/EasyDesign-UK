@@ -51,7 +51,7 @@ const ContactUs = () => {
   //   };
 
   return (
-    <div className="contact-us-div  container-fluid d-flex flex-lg-row flex-column justify-content-center">
+    <div className="contact-us-div  container-fluid d-flex flex-lg-row flex-column justify-content-center mt-5">
       <section
         id="/contact-us"
         className="container-sm d-flex flex-column flex-lg-row gap-4"

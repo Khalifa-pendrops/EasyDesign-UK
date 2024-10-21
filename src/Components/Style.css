@@ -33,6 +33,18 @@ body {
     overflow-x: hidden;
 }
 
+h4{
+    font-size: 1.4rem !important;
+}
+
+h1{
+    font-size: 2rem !important;
+}
+
+button:hover{
+    border: 1px solid #bf8417 !important;
+}
+
 /*A MIX OF CSS STYLINGS TO SUPPORT THE BOOTSTRAP CLASSES. THIS RUNS FROM NAV TO FOOTER IN NO PERTICULAR ORDER*/
 nav ul li a:hover {
     color: #bf8417 !important;
@@ -73,6 +85,11 @@ nav ul li a:focus {
     transition: background-color 0.3s ease-in-out !important;
 }
 
+/* .toggle-menu{
+        transform: translateY(-1000px);
+            opacity: 0;
+} */
+
 /* .hero-container-main{
     height: 100vh !important;
 } */
@@ -93,10 +110,10 @@ nav ul li a:focus {
 
 @media (max-width: 992px) {
     .hero-container-main{
-        margin-top: 15rem !important;
+        margin-top: 10rem !important;
     }
     .home-hero-image{
-        width: 100% !important;
+        width: 90% !important;
     }
 }
 
@@ -240,7 +257,7 @@ nav ul li a:focus {
 
 .hero-left h1 {
     color: var(--bs-h1-text);
-    font-size: 3.5rem !important;
+    /* font-size: 3.5rem !important; */
 }
 
 
@@ -287,6 +304,18 @@ nav ul li a:focus {
     border: none !important;
 }
 
+@media (max-width: 992px) {
+.about-container-main{
+    margin: 10rem 0 !important;
+}
+}
+
+@media (max-width: 768px) {
+.about-top-header .display-3{
+    width: 20rem;
+}
+}
+
 .animate-second {
     animation: slowMove 5s infinite alternate ease-in-out 1s;
 }
@@ -297,7 +326,7 @@ nav ul li a:focus {
     }
 
     100% {
-        transform: translateX(60px);
+        transform: translateX(40px);
     }
 }
 
@@ -414,13 +443,13 @@ nav ul li a:focus {
     background-color: var(--bs-feature-bg);
 }
 
-.pricing-top-div h4 {
+.colored-h4-text {
     color: #bf8417;
-    font-weight: 600;
-    font-size: 1.8rem;
+    font-weight: 500;
+    /* font-size: 1.4rem; */
 }
 
-.pricing-top-div h1 {
+.colored-h1-text {
     color: #343536;
     font-weight: 700;
     font-size: 2.8rem;
@@ -680,176 +709,6 @@ footer {
     color: rgb(189, 0, 189);
 }
 
-
-/* @media (max-width: 992px) {
-
-    .hero-container,
-    .home-about-right {
-        flex-direction: column;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-
-    .hero-left h1,
-    .about-h1 {
-        font-size: 2rem !important;
-        text-align: center !important;
-    }
-
-    .hero-left h1 {
-        width: 50% !important;
-        text-align: start !important;
-    }
-
-    .hero-left p {
-        width: 50% !important;
-        text-align: start !important;
-    }
-
-    .about-top-header h1,
-    .about-top-header h4,
-    .home-about-right p {
-        text-align: start !important;
-    }
-
-    .about-top-header h1 {
-        width: 60%;
-    }
-
-    .about-p {
-        width: 100%;
-    }
-
-    .about-hero-image {
-        display: none;
-    }
-
-    .home-hero-image,
-    .show-image,
-    .features-image {
-        display: block !important;
-        width: 80% !important;
-        height: auto !important;
-    }
-
-    .feature-div-left {
-        width: 90% !important;
-    }
-
-    .home-about-right {
-        align-items: start !important;
-        text-align: start !important;
-    }
-
-    .web-dev-div,
-    .ui-ux-div,
-    .mobile-dev-div,
-    .design-div,
-    .icon-div {
-        width: 90%;
-    }
-
-    .display-3 {
-        width: 60% !important;
-    }
-
-    .icon-div {
-        width: 40%;
-    }
-
-    .home-service-head p {
-        width: 80% !important;
-    }
-
-    .home-service-head h1 {
-        font-size: 2rem !important;
-    }
-
-    .home-service-head h4 {
-        font-size: 1.6rem;
-    }
-
-    .fixed-position {
-        position: relative !important;
-    }
-
-    .hero-container-main,
-    .about-container-main {
-        height: auto !important;
-        margin-top: 5rem !important;
-    }
-
-    .section-container-main,
-    .feature-main-container {
-        margin-top: 5rem !important;
-    }
-
-    .feature-main-container {
-        padding: 5rem 0 !important;
-        width: 100%;
-    }
-
-    .pricing-bottom-div {
-        width: 80%;
-    }
-
-    .pricing-top-div h1,
-    .hero-h1 {
-        font-size: 2rem !important;
-        width: 20rem !important;
-        color: var(--bs-h1-text);
-    }
-
-    .pricing-card {
-        width: 100% !important;
-    }
-
-    .contact-us-div {
-        align-items: flex-start !important;
-        padding-left: 3rem !important;
-        width: 100%;
-        gap: 4rem !important;
-
-    }
-
-    .contact-info-div,
-    .newsletter-div,
-    .navigate-div {
-        gap: 0;
-    }
-
-    .contact-us-label {
-        width: 14rem !important;
-    }
-
-    .contact-info-div h4 {
-        width: 10rem !important;
-    }
-
-    .contact-info-div p {
-        width: 20rem !important;
-    }
-
-    .footer-copyright {
-        margin-left: 2rem !important;
-    }
-
-    .routed-contact-form {
-        margin-left: 0rem !important;
-    }
-
-    .routed-contact-card-head p {
-        width: 100% !important;
-    }
-
-    .routed-contact-card-head h1 {
-        width: 80% !important;
-        text-align: center;
-    }
-
-} */
-
 /*ROUTED CONTACT PAGE STARTS HERE*/
 .routed-contact-div {
     display: flex;
@@ -937,13 +796,9 @@ footer {
     height: 100%;
     margin-top: 2rem;
     gap: 4rem;
-    /* margin-left: 7rem; */
 }
 
 .form-left {
-    /* display: flex;
-    flex-direction: column;
-    gap: .6rem; */
     transform: translateX(-1000px);
     opacity: 0;
 }
@@ -982,13 +837,13 @@ label {
     font-size: .8rem;
     color: #6c757d !important;
     position: absolute;
-    left: 49.5%;
-    top: 32%;
+    left: 49.4%;
+    top: 16%;
 }
 
 @media (max-width: 992px) {
     label {
-        top: 46.9%;
+        top: 57%;
         left: 2%;
     }
 }

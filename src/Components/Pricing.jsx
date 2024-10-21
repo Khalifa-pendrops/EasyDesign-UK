@@ -9,6 +9,7 @@ function Pricing() {
   const isVisible = useOnScreen(ref, "0px");
   return (
     <div
+      className=" mt-5"
       ref={ref}
       style={{
         minHeight: "100vh",
@@ -16,16 +17,20 @@ function Pricing() {
         transform: isVisible ? "translateY(0)" : "translateY(100px)",
         transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
       }}
-    >      <section
+    >
+      {" "}
+      <section
         id="pricing"
-        className="pricing-parent-container container-fluid my-5 d-flex flex-column justify-content-center align-items-center gap-5 border"
+        className="pricing-parent-container container-sm my-5 d-flex flex-column justify-content-center align-items-center gap-5"
       >
         <div
           className="pricing-top-div d-flex flex-column justify-content-center align-items-center text-center"
           data-aos="fade-up"
         >
-          <h4 className="">Pricing Plan</h4>
-          <h1 className="">Not Sure Which Plan Is For You?</h1>
+          <h4 className="colored-h4-text fs-3 fs-xxl-0">Pricing Plan</h4>
+          <h1 className="colored-h1-text fw-medium about-h1 fs-1 fs-xxl-0">
+            Not Sure Which Plan Is For You?
+          </h1>
           <p className="lh-lg w-75">
             Our pricing is flexible and tailored to each project. We cater to
             both UK and international clients, offering customized web solutions
@@ -35,7 +40,7 @@ function Pricing() {
           </p>
         </div>
 
-        <div className="pricing-bottom-div row justify-content-center align-items-start container-fluid border">
+        <div className="pricing-bottom-div row justify-content-center align-items-start container-sm">
           <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4">
             <div
               className="pricing-card d-flex flex-column justify-content-center align-items-center gap-2"

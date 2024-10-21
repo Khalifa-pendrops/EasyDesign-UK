@@ -8,7 +8,7 @@ function About() {
   const isVisible = useOnScreen(ref, "0px");
   return (
     <div
-      className="about-container-main container-xxl d-flex justify-content-center align-items-center"
+      className="about-container-main container-xxl d-flex justify-content-center align-items-center mt-5"
       ref={ref}
       style={{
         minHeight: "100vh",
@@ -19,7 +19,7 @@ function About() {
     >
       <section
         id="about"
-        className="home-about-div container-xxl container-md d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 px-5 py-5 px-md-0 py-md-0"
+        className="home-about-div container-xxl container-md d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 px-5 py-5 px-sm-0 py-sm-0"
       >
         <div className="about-hero-image-div d-none d-md-inline">
           <img
@@ -31,18 +31,18 @@ function About() {
           />
         </div>
         <div
-          className="home-about-right d-flex flex-column justify-content-center align-items-start"
+          className="home-about-right container-fluid d-flex flex-column justify-content-center align-items-start px-5 px-xxl-0 mx-2 mx-xxl-0"
           data-aos="fade-up"
         >
           <div className="about-top-header" data-aos="fade-up">
-            <h4 className="display-6 about-h4">About Us</h4>
-            <h1 className="display-3 fw-medium about-h1">
+            <h4 className="colored-h4-text fs-3 fs-xxl-0">About Us</h4>
+            <h1 className="colored-h1-text fw-medium fs-1 fs-xxl-0">
               Crafting Digital Experiences for Your Success
             </h1>
           </div>
-          <div className="d-inline d-md-none">
+          <div className="d-inline d-md-none border w-100">
             <img
-              className="show-image animate-second"
+              className="show-image animate-second w-100"
               data-aos="fade-up"
               src={aboutus}
               alt="about image"

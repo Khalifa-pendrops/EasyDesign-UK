@@ -28,11 +28,12 @@ function Header() {
         scrolled ? "fixed-position-scrolled" : "bg-transparent"
       }`}
     >
-      <nav className="navbar navbar-expand-lg border">
-        <div className="container-fluid">
-          <Link to="/" className="links nav-link fs-5">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+        <div className="container-fluid px-5">
+          <Link to="/" className="navbar-brand">
             <img src={logo} alt="logo" width="60px" />
           </Link>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -42,15 +43,17 @@ function Header() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon "></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
+
           <div
-            className="collapse navbar-collapse justify-content-end align-center d-lg-none "
+            className="toggle-menu collapse navbar-collapse justify-content-end"
             id="main-nav"
+            // data-aos="fade-down"
           >
-            <ul className="navbar-nav">
-              <li className="nav-item ">
-                <Link to="/" className="links nav-link fs-5">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link to="/" className="nav-link fs-5">
                   Home
                 </Link>
               </li>
@@ -70,7 +73,7 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <Link to="/routedcontact" className="links nav-link fs-5">
+                <Link to="/routedcontact" className="nav-link fs-5">
                   Contact Us
                 </Link>
               </li>

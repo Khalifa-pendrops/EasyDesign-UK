@@ -4,18 +4,18 @@ import heroimage from "../assets/hero-image.png";
 
 function HomeHero() {
   return (
-    <div className="hero-container-main container-fluid d-flex justify-content-center align-items-center my-sm-5">
+    <div className="hero-container-main container-fluid d-flex justify-content-center align-items-center">
       <section
         id="home"
         className="d-flex flex-column justify-content-center align-items-center mb-4 container-xxl"
       >
-        <div className="hero-container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 container-xxl">
+        <div className="hero-container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 container-sm">
           <div
             className="hero-left d-flex flex-column justify-content-center align-items-md-start  gap-2 "
             data-aos="fade-right"
           >
             <h1
-              className="hero-h1 display-3 w-100 w-md-75 w-lg-50 fw-medium"
+              className="colored-h1-text fw-medium fs-1 fs-xxl-0"
               data-aos="fade-right"
               data-aos-duration="1000"
               data-aos-delay="0"

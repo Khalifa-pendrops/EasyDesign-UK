@@ -86,7 +86,7 @@ function Features() {
 
   return (
     <div
-      className="feature-main-container d-flex justify-content-center align-items-center gap-5"
+      className="feature-main-container container-fluid d-flex justify-content-center align-items-center gap-5 mt-5"
       ref={ref}
       style={{
         minHeight: "100vh",
@@ -160,9 +160,9 @@ function Features() {
             </div>
           ))}
         </div>
-        <div className="feature-image">
+        <div className="feature-image w-100">
           <img
-            className="features-image animate-second"
+            className="features-image animate-second w-100"
             data-aos="fade-left"
             src={aboutus}
             alt="about image"

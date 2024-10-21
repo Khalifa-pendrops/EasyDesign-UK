@@ -17,7 +17,7 @@ function Services() {
   const isVisible = useOnScreen(ref, "-100px");
   return (
     <div
-      className="section-container-main container-fluid d-flex justify-content-center align-items-center"
+      className="section-container-main container-fluid d-flex justify-content-center align-items-center mt-5"
       ref={ref}
       style={{
         minHeight: "100vh",
@@ -34,8 +34,10 @@ function Services() {
           className="home-service-head d-flex flex-column justify-content-center align-items-center"
           data-aos="fade-up"
         >
-          <h4 className="display-6">Our Services</h4>
-          <h1 className="display-3">What We Can Do For You</h1>
+          <h4 className="colored-h4-text fs-3 fs-xxl-0">Our Services</h4>
+          <h1 className="colored-h1-text fw-medium about-h1 fs-1 fs-xxl-0">
+            What We Can Do For You
+          </h1>
           <p className="lh-lg w-50">
             At Easy Design UK, we provide a range of digital solutions tailored
             to elevate your business. Our expertise spans from web development

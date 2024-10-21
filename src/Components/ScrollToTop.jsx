@@ -31,7 +31,7 @@ function ScrollToTop() {
   }, []);
 
   return (
-    <div className="scroll-to-top">
+    <div className="scroll-to-top ">
       {isVisible && (
         <button
           onClick={scrollToTop}

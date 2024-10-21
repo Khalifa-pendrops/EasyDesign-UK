@@ -152,7 +152,7 @@ const RoutedContactPage = () => {
                   />
                 </div>
 
-                <div className="input-ro d-flex flex-column flex-lg-row gap-2 justify-content-center alighn-items-center w-100 m-0">
+                <div className="input-row d-flex flex-column flex-lg-row gap-2 justify-content-center alighn-items-center w-100 m-0">
                   <input
                     type="tel"
                     name="phone"
