@@ -8,7 +8,7 @@ function About() {
   const isVisible = useOnScreen(ref, "0px");
   return (
     <div
-      className="about-container-main container-xxl d-flex justify-content-center align-items-center mt-5"
+      className="about-container-main container-xxl d-flex justify-content-center align-items-center"
       ref={ref}
       style={{
         minHeight: "100vh",

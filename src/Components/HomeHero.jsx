@@ -4,12 +4,12 @@ import heroimage from "../assets/hero-image.png";
 
 function HomeHero() {
   return (
-    <div className="hero-container-main container-fluid d-flex justify-content-center align-items-center">
+    <div className="hero-container-main container-fluid d-flex justify-content-center align-items-center pt-5">
       <section
         id="home"
-        className="d-flex flex-column justify-content-center align-items-center mb-4 container-xxl"
+        className="d-flex flex-column justify-content-center align-items-center container-xxl pt-5"
       >
-        <div className="hero-container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 container-sm">
+        <div className="hero-container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 container-sm pt-5">
           <div
             className="hero-left d-flex flex-column justify-content-center align-items-md-start  gap-2 "
             data-aos="fade-right"
@@ -50,14 +50,14 @@ function HomeHero() {
             src={heroimage}
             alt="hero image"
           />
-          {/* <div className="shape-container">
-            <div className="triangle triangle-1"></div>
-            <div className="triangle triangle-2"></div>
-            <div className="circle circle-1"></div>
-            <div className="circle circle-2"></div>
-            <div className="circle circle-3"></div>
-            <div className="heart"></div>
-          </div> */}
+          <div className="shape-container container-fluid d-flex justify-content-center align-items-center position-absolute overflow-hidden top-0 start-0">
+            <div className="triangle triangle-1 position-absolute"></div>
+            <div className="triangle triangle-2 position-absolute"></div>
+            <div className="circle-home circle-home-1 position-absolute"></div>
+            <div className="circle-home circle-home-2 position-absolute"></div>
+            <div className="circle-home circle-home-3 position-absolute"></div>
+            <div className="heart position-absolute"></div>
+          </div>
         </div>
       </section>
     </div>

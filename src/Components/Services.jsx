@@ -72,7 +72,7 @@ function Services() {
               <div
                 className="ui-ux-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
                 data-aos="fade-up"
-                data-aos-delay="200"
+                data-aos-delay="250"
               >
                 <div className="icon-div border p-5 bg-warning rounded">
                   <FontAwesomeIcon className="icon fs-1" icon={faPaintbrush} />
@@ -93,7 +93,7 @@ function Services() {
               <div
                 className="mobile-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
                 data-aos="fade-up"
-                data-aos-delay="300"
+                data-aos-delay="350"
               >
                 <div className="icon-div border p-5 bg-warning rounded">
                   <FontAwesomeIcon
@@ -119,7 +119,7 @@ function Services() {
               <div
                 className="design-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
                 data-aos="fade-up"
-                data-aos-delay="400"
+                data-aos-delay="450"
               >
                 <div className="icon-div border p-5 bg-warning rounded">
                   <FontAwesomeIcon
@@ -143,7 +143,7 @@ function Services() {
               <div
                 className="seo-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
                 data-aos="fade-up"
-                data-aos-delay="500"
+                data-aos-delay="550"
               >
                 <div className="icon-div border p-5 bg-warning rounded">
                   <FontAwesomeIcon
@@ -168,7 +168,7 @@ function Services() {
               <div
                 className="digital-marketing-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
                 data-aos="fade-up"
-                data-aos-delay="600"
+                data-aos-delay="650"
               >
                 <div className="icon-div border p-5 bg-warning rounded">
                   <FontAwesomeIcon className="icon fs-1" icon={faChartLine} />
@@ -190,7 +190,7 @@ function Services() {
               <div
                 className="hosting-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
                 data-aos="fade-up"
-                data-aos-delay="700"
+                data-aos-delay="750"
               >
                 <div className="icon-div border p-5 bg-warning rounded">
                   <FontAwesomeIcon className="icon fs-1" icon={faServer} />
@@ -214,7 +214,7 @@ function Services() {
               <div
                 className="performance-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
                 data-aos="fade-up"
-                data-aos-delay="800"
+                data-aos-delay="850"
               >
                 <div className="icon-div border p-5 bg-warning rounded">
                   <FontAwesomeIcon className="icon fs-1" icon={faRocket} />
