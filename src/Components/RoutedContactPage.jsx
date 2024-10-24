@@ -108,11 +108,14 @@ const RoutedContactPage = () => {
           </div>
         </div>
 
-        <div className="routed-contact-card container-fluid position-relative">
-          <div className="routed-contact-card-head" data-aos="fade-up">
-            <h4 className="display-6">Contact Us</h4>
-            <h1 className="display-3 ">Get In Touch With Us</h1>
-            <p className="w-100">
+        <div className="routed-contact-card container-fluid  position-relative">
+          <div
+            className="routed-contact-card-head d-flex flex-column justify-content-center align-items-center gap-4"
+            data-aos="fade-up"
+          >
+            <h4 className="">Contact Us</h4>
+            <h1 className="bold-h1">Get In Touch With Us</h1>
+            <p className="head-text w-100">
               We'd love to hear from you! Whether you have a question about our
               services, need a project quote, or just want to say hello, our
               team is here to help. Reach out to us using the form below, and
@@ -125,7 +128,7 @@ const RoutedContactPage = () => {
               className="form-left d-flex flex-column justify-content-center align-items-start container w-100 p-0"
               data-aos="fade-right"
             >
-              <h1>Get In Touch</h1>
+              <h1 className="bold-h1">Get In Touch</h1>
               <p>Send Us a Message</p>
               <form
                 method="post"
@@ -161,30 +164,31 @@ const RoutedContactPage = () => {
                     placeholder="Your Phone"
                     required
                   />
-                    <label className="">
-                      Your Project <br></br>
-                    </label>
-                    <select className="w-100"
-                      id="services"
-                      name="project"
-                      value={formData.project}
-                      onChange={handleChange}
+                  <label className="">
+                    Your Project <br></br>
+                  </label>
+                  <select
+                    className="w-100"
+                    id="services"
+                    name="project"
+                    value={formData.project}
+                    onChange={handleChange}
+                  >
+                    <option
+                      className="disabled-colored-select"
+                      value="disabled"
                     >
-                      <option
-                        className="disabled-colored-select"
-                        value="disabled"
-                      >
-                        Choose a service
-                      </option>
-                      <option value="branding">Business Branding</option>
-                      <option value="graphics">Graphics Design</option>
-                      <option value="social-media">
-                        Social Media Management
-                      </option>
-                      <option value="video-editing">Video Editing</option>
-                      <option value="web-dev">Web and App Development</option>
-                    </select>
-                  </div>
+                      Choose a service
+                    </option>
+                    <option value="branding">Business Branding</option>
+                    <option value="graphics">Graphics Design</option>
+                    <option value="social-media">
+                      Social Media Management
+                    </option>
+                    <option value="video-editing">Video Editing</option>
+                    <option value="web-dev">Web and App Development</option>
+                  </select>
+                </div>
                 <input
                   className="w-100"
                   type="text"
@@ -277,6 +281,8 @@ const RoutedContactPage = () => {
               </div>
             </div>
           </div>
+          <div className="circle2 mid-circle-left"></div>
+          <div className="circle2 mid-circle-right"></div>
         </div>
         <Location />
       </div>

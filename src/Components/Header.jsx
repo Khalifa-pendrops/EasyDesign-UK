@@ -51,7 +51,7 @@ function Header() {
             id="main-nav"
             // data-aos="fade-down"
           >
-            <ul className="navbar-nav ms-auto">
+            <ul className="navbar-nav ms-auto pt-5">
               <li className="nav-item">
                 <Link to="/" className="nav-link fs-5">
                   Home

@@ -35,7 +35,7 @@ function Services() {
           data-aos="fade-up"
         >
           <h4 className="colored-h4-text fs-3 fs-xxl-0">Our Services</h4>
-          <h1 className="colored-h1-text fw-medium about-h1 fs-1 fs-xxl-0">
+          <h1 className="colored-h1-text fw-bolder about-h1 fs-1 fs-xxl-0">
             What We Can Do For You
           </h1>
           <p className="lh-lg w-50">

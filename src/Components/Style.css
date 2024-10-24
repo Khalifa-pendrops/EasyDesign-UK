@@ -32,23 +32,19 @@ body {
     overflow-x: hidden;
 }
 
-h4 {
-    font-size: 1.4rem !important;
-}
 
-h1 {
-    font-size: 2rem !important;
-}
 
 button:hover {
     border: 1px solid #bf8417 !important;
 }
 
 /*A MIX OF CSS STYLINGS TO SUPPORT THE BOOTSTRAP CLASSES. THIS RUNS FROM NAV TO FOOTER IN NO PERTICULAR ORDER*/
-nav ul li a:hover {
-    color: #bf8417 !important;
+nav ul li a {
+    color: var(--bs-h1-text);
 }
 
+
+nav ul li a:hover,
 nav ul li a:focus {
     color: #bf8417 !important;
     outline: none;
@@ -74,7 +70,7 @@ nav ul li a:focus {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: transparent;
+    background-color: transparent !important;
     transition: background-color 0.8s, transform 0.8s ease;
 }
 
@@ -86,16 +82,7 @@ nav ul li a:focus {
     z-index: 1000;
 }
 
-/* .toggle-menu{
-        transform: translateY(-1000px);
-            opacity: 0;
-} */
-
-/* .hero-container-main{
-    height: 100vh !important;
-} */
-
-.hero h1,
+.hero-left h1,
 .hero-left p,
 .home-hero-btn {
     opacity: 0;
@@ -185,6 +172,11 @@ nav ul li a:focus {
     animation: move-to-fro 15s ease-in-out infinite;
 }
 
+.triangle-2,
+.circle-home-2 {
+    animation: moveRandomly 21s linear infinite;
+}
+
 .triangle-2 {
     width: 0;
     height: 0;
@@ -192,7 +184,6 @@ nav ul li a:focus {
     border-right: 30px solid transparent;
     border-bottom: 50px solid rgb(233, 233, 203);
     position: absolute;
-    animation: moveRandomly 21s linear infinite;
     top: 35%;
     left: 0%;
 }
@@ -231,7 +222,6 @@ nav ul li a:focus {
 .circle-home-2 {
     width: 300px;
     height: 300px;
-    animation: moveRandomly 15s linear infinite;
     background: radial-gradient(circle, transparent 59%, rgb(229, 228, 228) 50%);
     left: 0;
     top: 20px;
@@ -315,18 +305,6 @@ nav ul li a:focus {
         transform: translate(100vw, 20vh);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .bg-transparent {
     background-color: transparent !important;
@@ -467,11 +445,6 @@ nav ul li a:focus {
     transition: background-color 0.5s ease, color 0.5s ease-in-out !important;
     background-color: var(--bs-white) !important;
     color: #bf8417 !important;
-}
-
-.hero-left h1 {
-    color: var(--bs-h1-text);
-    /* font-size: 3.5rem !important; */
 }
 
 
@@ -666,8 +639,9 @@ nav ul li a:focus {
 
 .colored-h1-text {
     color: #343536;
-    font-weight: 700;
-    font-size: 2.8rem;
+    font-weight: 600;
+    font-size: 3.4rem !important;
+    color: var(--bs-h1-text);
 }
 
 .pricing-top-div {
@@ -981,11 +955,6 @@ footer {
 }
 
 .routed-contact-card-head {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: .4rem;
     transform: translateY(1000px);
     opacity: 0;
 }
@@ -995,12 +964,13 @@ footer {
     color: #bf8417;
 }
 
-.routed-contact-card-head h1 {
-    font-size: 2.8rem;
-    color: #343a40;
+.bold-h1 {
+    font-size: 3rem !important;
+    color: #343a40 !important;
 }
 
-.routed-contact-card-head p {
+.head-text {
+    font-size: 1.1rem;
     text-align: center;
     line-height: 1.6;
     width: 60% !important;
@@ -1245,7 +1215,7 @@ form textarea {
 .rectangle-10 {
     width: 130px;
     height: 130px;
-    animation-duration: 50s;
+    animation-duration: 40s;
     border-radius: 5px;
 }
 
@@ -1294,5 +1264,91 @@ form textarea {
 
     100% {
         transform: translate(0, 0);
+    }
+}
+
+
+.circle2 {
+    width: 20rem;
+    height: 20rem;
+    background: radial-gradient(circle, transparent 50%, rgba(128, 0, 128, 0.066) 50%);
+    border-radius: 50%;
+    position: absolute;
+    /* animation: moveCircle 5s ease-in-out infinite; */
+    background-color: transparent;
+}
+
+.mid-circle-left {
+    top: 20px;
+    left: 30%;
+    animation: kite-left 60s infinite ease-in-out;
+}
+
+
+.mid-circle-right {
+    top: 20px;
+    left: 30%;
+    animation: kite-right 60s infinite ease-in-out;
+}
+
+
+@keyframes kite-left {
+    0% {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    25% {
+        top: 50vh;
+        left: 0;
+    }
+
+    50% {
+        top: 100vh;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    75% {
+        top: 50vh;
+        left: 100vw;
+    }
+
+    100% {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+@keyframes kite-right {
+    0% {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    25% {
+        top: 50vh;
+        left: 100vw;
+    }
+
+    50% {
+        top: 100vh;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    75% {
+        top: 50vh;
+        left: 0;
+    }
+
+    100% {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

@@ -36,7 +36,7 @@ function About() {
         >
           <div className="about-top-header" data-aos="fade-up">
             <h4 className="colored-h4-text fs-3 fs-xxl-0">About Us</h4>
-            <h1 className="colored-h1-text fw-medium fs-1 fs-xxl-0">
+            <h1 className="colored-h1-text  fw-bolder fs-1 fs-xxl-0">
               Crafting Digital Experiences for Your Success
             </h1>
           </div>

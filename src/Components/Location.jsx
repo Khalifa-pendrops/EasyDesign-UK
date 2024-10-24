@@ -78,7 +78,7 @@ function Location() {
   return (
     <div>
       <div
-        className="container col-12 mb-4"
+        className="container col-12 mt-5"
         data-aos="fade-Up"
         data-aos-delay="0.1s"
       >
