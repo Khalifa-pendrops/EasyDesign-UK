@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Header from "./Header";
@@ -18,6 +18,7 @@ import ScrollToTop from "./ScrollToTop";
 import SubmissionSuccessPage from "./SubmissionSuccessPage";
 import ErrorPage from "./SubmissionErrorPage";
 import Modal from "./Modal";
+import loader from "../assets/ajax-loader.gif";
 
 const RoutedContactPage = () => {
   const [formData, setFormData] = useState({
@@ -33,17 +34,19 @@ const RoutedContactPage = () => {
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const url = "http://localhost/submission";
 
   const closeModal = () => {
     setIsModalOpen(false);
     setIsSuccess(null);
-    };
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setIsSubmitting(true);
 
     try {
       const response = await axios.post(url, formData);
@@ -58,6 +61,7 @@ const RoutedContactPage = () => {
       setIsModalOpen(true);
     } finally {
       setLoading(false);
+      setIsSubmitting(false);
     }
   };
 
@@ -288,6 +292,11 @@ const RoutedContactPage = () => {
       <ContactUs />
       <Footer />
       <ScrollToTop />
+      {isSubmitting && (
+        <div className="loading-container">
+          <img src={loader} alt="loading gif" />
+        </div>
+      )}
       <Modal isOpen={isModalOpen} closeModal={closeModal}>
         {isSuccess === true && <SubmissionSuccessPage />}
         {isSuccess === false && <ErrorPage />}
