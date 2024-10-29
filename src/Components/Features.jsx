@@ -163,7 +163,7 @@ function Features() {
         <div className="feature-image w-100">
           <img
             className="features-image animate-second w-100"
-            data-aos="fade-left"
+            data-aos="fade-right"
             src={aboutus}
             alt="about image"
           />

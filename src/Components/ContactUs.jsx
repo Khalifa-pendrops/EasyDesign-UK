@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Modal from "./Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -8,47 +10,42 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import SubscribeSuccessPage from "./SubscriptionSuccessPage";
+import SubscriptionErrorPage from "./SubscriptionErrorPage";
 
 const ContactUs = () => {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(null);
 
-  //   const handleSubscribe = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       const response = await axios.post("https://your-api-url.com/subscribe", {
-  //         email: email,
-  //         message: message,
-  //       });
-  //       setMessage(response.data.message);
-  //       alert("Thank you for subscribing!");
-  //       setEmail("");
-  //       setMessage("");
-  //     } catch (error) {
-  //       setMessage(error.response?.data?.error || "Subscription failed!");
-  //     }
-  //     setEmail(" ");
-  //   };
+  const url = "https://bossaddapihere.com";
 
-  const handleSubscribe = () => {
-    axios
-      .post("http://localhost:5175/subscribe", { email })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error("Error subscribing: ", error);
-      });
+  const closeModal = () => {
+      setIsModalOpen(false);
+      setIsSuccess(null);
   };
 
-  //   const [formState, setFormState] = useState({
-  //     email: "",
-  //   });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-  //   const handleChange = (event) => {
-  //     event.preventDefault(event.target.value);
-  //     setFormState({ ...formState, [event.target.email]: event.target.value });
-  //   };
+    try {
+      const response = await axios.post(url, { email });
+        console.log(response.data);
+      if (response.data.success) {
+          setIsSuccess(true);
+      } else {
+          setIsSuccess(false);
+        }
+        setIsModalOpen(true);
+    } catch (error) {
+        setIsSuccess(false);
+        setIsModalOpen(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="contact-us-div  container-fluid d-flex flex-lg-row flex-column justify-content-center mt-5">
@@ -79,7 +76,7 @@ const ContactUs = () => {
         {/* <div className="contact-row d-flex  justify-content-between"> */}
         <div className="newsletter-div w-100">
           <h4>Newsletter</h4>
-          <form className="d-flex flex-column" onSubmit={handleSubscribe}>
+          <form className="d-flex flex-column" onSubmit={handleSubmit}>
             <label className="contact-us-label">
               Subscribe to our newsletter
             </label>
@@ -90,16 +87,21 @@ const ContactUs = () => {
               value={email}
               placeholder="Enter your email"
               onChange={(e) => setEmail(e.target.value)}
+              required
+              disabled={loading}
             />
             <button
               className="contact-btn btn border"
               type="submit"
-              onClick={handleSubscribe}
+              disabled={loading}
             >
-              Subscribe
+              {loading ? "Subscribing..." : "Subscribe"}
             </button>
-          </form>
-          {message && <p>{message}</p>}
+                  </form>
+                  <Modal isOpen={isModalOpen} closeModal={closeModal}>
+                      {isSuccess === true && <SubscribeSuccessPage />}
+                      {isSuccess ===false && <SubscriptionErrorPage />}
+                  </Modal>
         </div>
         <div className="contact-info-div w-100 ">
           <h4>Contact Info</h4>

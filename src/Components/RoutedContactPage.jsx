@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import WOW from "wowjs";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
-  faTurnUp,
+  faMagnifyingGlassArrowRight,
   faLocationDot,
   faEnvelope,
   faMobile,
@@ -16,6 +15,9 @@ import Location from "./Location";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
+import SubmissionSuccessPage from "./SubmissionSuccessPage";
+import ErrorPage from "./SubmissionErrorPage";
+import Modal from "./Modal";
 
 const RoutedContactPage = () => {
   const [formData, setFormData] = useState({
@@ -28,36 +30,35 @@ const RoutedContactPage = () => {
   });
   const [responseMessage, setResponseMessage] = useState("");
   const [selectedService, setSelectedServices] = useState(" ");
+  const [loading, setLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(null);
+
+  const url = "http://localhost/submission";
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsSuccess(null);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // i will add API call here or any other backend logic here to send the form data to your server.
-    // try {
-    //   const response = await axios.post(
-    //     "https://localhost:5174/message",
-    //     formData
-    //   );
-    //   console.log("Form Data Submitted:", formData);
-    //   setResponseMessage(response.data.message);
-    // }
-    axios
-      .post("http://loccalhost:5175/submit-form", formData)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error("Error submitting form: ", error);
-      });
+    setLoading(true);
 
-    // .catch (error) => {
-    //   setResponseMessage(
-    //     error.response?.data?.error || "Failed to send message!"
-    //   );
-    //   setSelectedServices(
-    //     error.response?.data?.error ||
-    //       "You didn't select a service. Kindly select a service."
-    //   );
-    // }
+    try {
+      const response = await axios.post(url, formData);
+      if (response.data.success) {
+        console.log(response.data.message);
+        setIsSuccess(true);
+      } else {
+        setIsSuccess(false);
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      setIsModalOpen(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -69,23 +70,15 @@ const RoutedContactPage = () => {
     });
   };
 
-  //   useEffect(() => {
-  //     new WOW.WOW().init();
-  //   }, []);
-
   return (
     <div className="rounted-contect-main-container">
       <Header />
       <div className="routed-contact-div container-sm-fluid">
         <div className="routed-contact-header w-100">
           <h1>Contact Us</h1>
-          <div>
-            <Link className="contact-linked" to="/">
-              <p className="">
-                Home / <span>Contact</span>
-              </p>
-            </Link>
-          </div>
+          <Link className="contact-linked" to="/">
+            Home / <span>Contact</span>
+          </Link>
           <div
             className="rectangles-container container-fluid"
             data-aos="fade-up"
@@ -144,6 +137,7 @@ const RoutedContactPage = () => {
                     onChange={handleChange}
                     placeholder="Your Name"
                     required
+                    disabled={loading}
                   />
                   <input
                     type="email"
@@ -152,6 +146,7 @@ const RoutedContactPage = () => {
                     onChange={handleChange}
                     placeholder="Your Email"
                     required
+                    disabled={loading}
                   />
                 </div>
 
@@ -163,6 +158,7 @@ const RoutedContactPage = () => {
                     onChange={handleChange}
                     placeholder="Your Phone"
                     required
+                    disabled={loading}
                   />
                   <label className="">
                     Your Project <br></br>
@@ -173,6 +169,7 @@ const RoutedContactPage = () => {
                     name="project"
                     value={formData.project}
                     onChange={handleChange}
+                    disabled={loading}
                   >
                     <option
                       className="disabled-colored-select"
@@ -197,6 +194,7 @@ const RoutedContactPage = () => {
                   onChange={handleChange}
                   placeholder="Subject"
                   required
+                  disabled={loading}
                 />
                 <textarea
                   name="message"
@@ -204,17 +202,22 @@ const RoutedContactPage = () => {
                   onChange={handleChange}
                   placeholder="Message"
                   required
+                  disabled={loading}
                 ></textarea>
                 <button
                   className="routed-contact-btn"
                   type="submit"
                   value="Submit"
-                  onSubmit={handleSubmit}
+                  //   onSubmit={handleSubmit}
+                  disabled={loading}
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
-              {responseMessage && <p>{responseMessage}</p>}
+              <Modal isOpen={isModalOpen} closeModal={closeModal}>
+                {isSuccess === true && <SubmissionSuccessPage />}
+                {isSuccess === false && <ErrorPage />}
+              </Modal>
             </div>
             <div
               className="form-right d-flex flex-column justify-content-center align-items-start container gap-4 m-lg-0"
@@ -256,8 +259,8 @@ const RoutedContactPage = () => {
               <div className="row-icons">
                 <a href="">
                   <FontAwesomeIcon
-                    className="routed-contact-icon"
-                    icon={faTurnUp}
+                    className="routed-contact-icon magnifying-glass"
+                    icon={faMagnifyingGlassArrowRight}
                   />
                 </a>
                 <a

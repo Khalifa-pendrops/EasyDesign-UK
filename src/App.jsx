@@ -9,6 +9,8 @@ import RoutedContactPage from "./Components/RoutedContactPage";
 import ScrollToTop from "./Components/ScrollToTop";
 import SubmissionErrorPage from "./Components/SubmissionErrorPage";
 import SubscriptionErrorPage from "./Components/SubscriptionErrorPage";
+import SubmissionSuccessPage from "./Components/SubmissionSuccessPage";
+import SubscribeSuccessPage from "./Components/SubmissionSuccessPage";
 
 function App() {
   useEffect(() => {
@@ -23,9 +25,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/routedcontact" element={<RoutedContactPage />} />
+        <Route path="/submit-success" element={<SubmissionSuccessPage />} />
+        <Route path="/subscribe-success" element={<SubscribeSuccessPage />} />
+        <Route path="/submit-error" element={<SubmissionErrorPage />} />
+        <Route path="/subscribe-error" element={<SubscriptionErrorPage />} />
       </Routes>
-      {/* <SubmissionErrorPage />
-      <SubscriptionErrorPage /> */}
     </>
   );
 }
