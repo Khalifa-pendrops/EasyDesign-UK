@@ -28,7 +28,7 @@ const RoutedContactPage = () => {
     subject: "",
     message: "",
   });
-  const [responseMessage, setResponseMessage] = useState("");
+
   const [selectedService, setSelectedServices] = useState(" ");
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,7 +39,7 @@ const RoutedContactPage = () => {
   const closeModal = () => {
     setIsModalOpen(false);
     setIsSuccess(null);
-  };
+    };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -214,10 +214,6 @@ const RoutedContactPage = () => {
                   {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
-              <Modal isOpen={isModalOpen} closeModal={closeModal}>
-                {isSuccess === true && <SubmissionSuccessPage />}
-                {isSuccess === false && <ErrorPage />}
-              </Modal>
             </div>
             <div
               className="form-right d-flex flex-column justify-content-center align-items-start container gap-4 m-lg-0"
@@ -292,6 +288,10 @@ const RoutedContactPage = () => {
       <ContactUs />
       <Footer />
       <ScrollToTop />
+      <Modal isOpen={isModalOpen} closeModal={closeModal}>
+        {isSuccess === true && <SubmissionSuccessPage />}
+        {isSuccess === false && <ErrorPage />}
+      </Modal>
     </div>
   );
 };
