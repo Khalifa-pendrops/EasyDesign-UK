@@ -40,7 +40,7 @@ function About() {
               Crafting Digital Experiences for Your Success
             </h1>
           </div>
-          <div className="d-inline d-md-none border w-100">
+          <div className="d-inline d-md-none w-100">
             <img
               className="show-image animate-second w-100"
               data-aos="fade-up"

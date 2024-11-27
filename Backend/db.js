@@ -1,20 +1,17 @@
-const mysql = require('mysql2');
+import mysql from "mysql2";
 
-//THIS LINE CREATES CONNECTION
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'khalifa.easydesign_',
-    database: 'easydesignuk',
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_USER || "root",
+  database: process.env.DB_NAME || "easydesignuk",
 });
 
-//THIS LINE CONNECTS TO THE DB
 db.connect((err) => {
-    if (err) {
-        console.error('Database connection failed: ', err.stack);
-        return;
-    }
-    console.log('Connection to MySQL database');
+  if (err) {
+    console.error("Database connection failed: ", err.stack);
+  } else {
+    console.log("Connection to MySQL database");
+  }
 });
 
-module.exports = db;
+export default db;

@@ -8,7 +8,7 @@ const Modal = ({ isOpen, closeModal, children }) => {
       {children}
       <button
         className="modal-btn btn bg-primary text-muted rounded rounded-3 text-md"
-        onClick={closeModal}
+        onClick={ closeModal}
       >
         Close
       </button>

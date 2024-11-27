@@ -89,16 +89,16 @@ const RoutedContactPage = () => {
           >
             {/* THERE IS SOME ALIGNMENT ISSUES WITH THE RECTANGLES. FIX! */}
             <div className="ractangle-div container-fluid d-flex flex-column flex-sm-row gap-sm-2 justify-content-center align-items-center">
-              <div className="rectangle rectangle-1"></div>
-              <div className="rectangle rectangle-2"></div>
-              <div className="rectangle rectangle-3"></div>
-              <div className="rectangle rectangle-4"></div>
-              <div className="rectangle rectangle-5"></div>
-              <div className="rectangle rectangle-6"></div>
-              <div className="rectangle rectangle-7"></div>
-              <div className="rectangle rectangle-8"></div>
-              <div className="rectangle rectangle-9"></div>
-              <div className="rectangle rectangle-10"></div>
+              <div className="rectangle rectangle-1 ratio raio-4x3"></div>
+              <div className="rectangle rectangle-2 ratio raio-4x3"></div>
+              <div className="rectangle rectangle-3 ratio raio-4x3"></div>
+              <div className="rectangle rectangle-4 ratio raio-16x9"></div>
+              <div className="rectangle rectangle-5 ratio raio-16x9"></div>
+              <div className="rectangle rectangle-6 ratio raio-16x9"></div>
+              <div className="rectangle rectangle-7 ratio raio-16x9"></div>
+              <div className="rectangle rectangle-8 ratio raio-16x9"></div>
+              <div className="rectangle rectangle-9 ratio raio-16x9"></div>
+              <div className="rectangle rectangle-10 ratio raio-16x9"></div>
             </div>
             <div className="circle circle-left"></div>
             <div className="circle circle-right"></div>
