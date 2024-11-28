@@ -36,7 +36,7 @@ const RoutedContactPage = () => {
   const [isSuccess, setIsSuccess] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const url = "http://localhost/submission";
+  const url = "http://localhost:5000/api/form";
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -47,9 +47,12 @@ const RoutedContactPage = () => {
     e.preventDefault();
     setLoading(true);
     setIsSubmitting(true);
+    console.log("FormData being sent:", formData);
 
     try {
-      const response = await axios.post(url, formData);
+      const response = await axios.post(url, formData, {
+        headers: { "Content-Type": "application/json" },
+      });
       if (response.data.success) {
         console.log(response.data.message);
         setIsSuccess(true);
@@ -57,13 +60,52 @@ const RoutedContactPage = () => {
         setIsSuccess(false);
       }
     } catch (error) {
+          console.error("Form submission error:", error.message);
+          console.error("Full error object:", error);
+          alert("There was an issue submitting the form. Please try again.");
+      // catch (error) {
+      //   setIsSuccess(false);
+      //   setIsModalOpen(true);
+      //   console.error("An error occurred while submitting form: ", error);
+      // }
+
       setIsSuccess(false);
       setIsModalOpen(true);
+
+      if (error.response) {
+        console.error("Response data:", error.response.data);
+        console.error("Response status:", error.response.status);
+        console.error("Response headers:", error.response.headers);
+      } else if (error.request) {
+        console.error("Request data:", error.request);
+      } else {
+        console.error("Error message:", error.message);
+      }
+      console.error(
+        "Response data:",
+        JSON.stringify(error.response.data, null, 2)
+      );
     } finally {
       setLoading(false);
       setIsSubmitting(false);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        project: "",
+        subject: "",
+        message: "",
+      });
     }
   };
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [name]: value,
+  //   }));
+  // };
 
   const handleChange = (e) => {
     setSelectedServices(e.target.value);
@@ -175,6 +217,10 @@ const RoutedContactPage = () => {
                     onChange={handleChange}
                     disabled={loading}
                   >
+                    {/* <option value="" disabled selected hidden>
+                      Choose a service
+                    </option> */}
+
                     <option
                       className="disabled-colored-select"
                       value="disabled"
@@ -208,6 +254,19 @@ const RoutedContactPage = () => {
                   required
                   disabled={loading}
                 ></textarea>
+                {/* <button
+                  className="routed-contact-btn"
+                  type="submit"
+                  value="Submit"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <img src={loader} alt="Loading..." width={20} />
+                  ) : (
+                    "Send Message"
+                  )}
+                </button> */}
+
                 <button
                   className="routed-contact-btn"
                   type="submit"
@@ -297,10 +356,12 @@ const RoutedContactPage = () => {
           <img src={loader} alt="loading gif" />
         </div>
       )}
-      <Modal isOpen={isModalOpen} closeModal={closeModal}>
+
+      {/* WATCHOUT HERE!!! */}
+      {/* <Modal isOpen={isModalOpen} closeModal={closeModal}>
         {isSuccess === true && <SubmissionSuccessPage />}
         {isSuccess === false && <ErrorPage />}
-      </Modal>
+      </Modal> */}
     </div>
   );
 };

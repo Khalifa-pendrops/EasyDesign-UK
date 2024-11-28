@@ -19,11 +19,11 @@ const ContactUs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(null);
 
-  const url = "https://bossaddapihere.com";
+  const url = "https://localhost:5000/api/newsletter";
 
   const closeModal = () => {
-      setIsModalOpen(false);
-      setIsSuccess(null);
+    setIsModalOpen(false);
+    setIsSuccess(null);
   };
 
   const handleSubmit = async (e) => {
@@ -32,16 +32,16 @@ const ContactUs = () => {
 
     try {
       const response = await axios.post(url, { email });
-        console.log(response.data);
+      console.log(response.data);
       if (response.data.success) {
-          setIsSuccess(true);
+        setIsSuccess(true);
       } else {
-          setIsSuccess(false);
-        }
-        setIsModalOpen(true);
-    } catch (error) {
         setIsSuccess(false);
-        setIsModalOpen(true);
+      }
+      setIsModalOpen(true);
+    } catch (error) {
+      setIsSuccess(false);
+      setIsModalOpen(true);
     } finally {
       setLoading(false);
     }
@@ -97,11 +97,13 @@ const ContactUs = () => {
             >
               {loading ? "Subscribing..." : "Subscribe"}
             </button>
-                  </form>
-                  <Modal isOpen={isModalOpen} closeModal={closeModal}>
-                      {isSuccess === true && <SubscribeSuccessPage />}
-                      {isSuccess ===false && <SubscriptionErrorPage />}
-                  </Modal>
+          </form>
+
+          {/* OBSERVE THE MODAL HERE!!   */}
+          <Modal isOpen={isModalOpen} closeModal={closeModal}>
+            {isSuccess === true && <SubscribeSuccessPage />}
+            {isSuccess === false && <SubscriptionErrorPage />}
+          </Modal>
         </div>
         <div className="contact-info-div w-100 ">
           <h4>Contact Info</h4>
