@@ -9,14 +9,13 @@ import {
   faLocationDot,
   faEnvelope,
   faMobile,
+  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Location from "./Location";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
-import SubmissionSuccessPage from "./SubmissionSuccessPage";
-import ErrorPage from "./SubmissionErrorPage";
 import Modal from "./Modal";
 import loader from "../assets/ajax-loader.gif";
 
@@ -59,18 +58,11 @@ const RoutedContactPage = () => {
       } else {
         setIsSuccess(false);
       }
+      setIsModalOpen(true);
     } catch (error) {
       console.error("Form submission error:", error.message);
       console.error("Full error object:", error);
-      alert("There was an issue submitting the form. Please try again.");
-      // catch (error) {
-      //   setIsSuccess(false);
-      //   setIsModalOpen(true);
-      //   console.error("An error occurred while submitting form: ", error);
-      // }
-
       setIsSuccess(false);
-      setIsModalOpen(true);
 
       if (error.response) {
         console.error("Response data:", error.response.data);
@@ -86,6 +78,7 @@ const RoutedContactPage = () => {
         JSON.stringify(error.response.data, null, 2)
       );
     } finally {
+      setIsModalOpen(true);
       setLoading(false);
       setIsSubmitting(false);
       setFormData({
@@ -98,14 +91,6 @@ const RoutedContactPage = () => {
       });
     }
   };
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prev) => ({
-  //     ...prev,
-  //     [name]: value,
-  //   }));
-  // };
 
   const handleChange = (e) => {
     setSelectedServices(e.target.value);
@@ -357,11 +342,53 @@ const RoutedContactPage = () => {
         </div>
       )}
 
-      {/* WATCHOUT HERE!!! */}
-      <Modal isOpen={isModalOpen} closeModal={closeModal}>
+      {/* WATCHOUT HERE!!! MODAL FOR FORM */}
+
+
+      
+      {/* <Modal isOpen={isModalOpen} closeModal={closeModal}>
         {isSuccess === true && <SubmissionSuccessPage />}
         {isSuccess === false && <ErrorPage />}
-      </Modal>
+      </Modal> */}
+      {/* {isModalOpen && (
+        <Modal onClose={closeModal}>
+          {isSuccess ? <SubmissionSuccessPage /> : <ErrorPage />}
+        </Modal>
+      )} */}
+
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          {isSuccess ? (
+            <div className="">
+              <FontAwesomeIcon
+                className="error-icon bg-warning"
+                icon={faCircleXmark}
+              />
+              <div className="d-flex flex-column justify-content-center align-items-center mt-4">
+                <h2>Success!</h2>
+                <p className="error-text text-center fs-6">
+                  Thank you for contacting us! We will get back to you shortly.
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="">
+              <FontAwesomeIcon
+                className="error-icon bg-warning"
+                icon={faCircleXmark}
+              />
+              <div className="d-flex flex-column justify-content-center align-items-center mt-4">
+                <h2>Error!</h2>
+                <p className="error-text text-center fs-6">
+                  There was a problem with your submission. Please try again
+                  later.
+                </p>
+              </div>
+            </div>
+          )}
+          {/* <button onClick={closeModal}>Close</button> */}
+        </Modal>
+      )}
     </div>
   );
 };
