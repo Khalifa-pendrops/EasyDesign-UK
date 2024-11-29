@@ -19,7 +19,7 @@ const ContactUs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(null);
 
-  const url = "https://localhost:5000/api/newsletter";
+  const url = "http://localhost:3000/api/newsletter";
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -27,11 +27,19 @@ const ContactUs = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("Data being sent:", email);
+    const data = {
+      email,
+    };
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await axios.post(url, { email });
+      const response = await axios.post(url, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       console.log(response.data);
       if (response.data.success) {
         setIsSuccess(true);
@@ -42,9 +50,12 @@ const ContactUs = () => {
     } catch (error) {
       setIsSuccess(false);
       setIsModalOpen(true);
+      console.error(error);
+      console.error("Server Response:", error.response?.data);
     } finally {
       setLoading(false);
     }
+    setEmail("");
   };
 
   return (

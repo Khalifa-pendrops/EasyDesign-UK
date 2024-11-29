@@ -56,6 +56,7 @@ app.post("/api/newsletter", (req, res) => {
     // });
 
     res.status(200).json({ message: "Successfully subscribed to newsletter!" });
+    console.log(result);
   });
 });
 

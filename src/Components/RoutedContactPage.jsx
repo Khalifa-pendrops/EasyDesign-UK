@@ -358,10 +358,10 @@ const RoutedContactPage = () => {
       )}
 
       {/* WATCHOUT HERE!!! */}
-      {/* <Modal isOpen={isModalOpen} closeModal={closeModal}>
+      <Modal isOpen={isModalOpen} closeModal={closeModal}>
         {isSuccess === true && <SubmissionSuccessPage />}
         {isSuccess === false && <ErrorPage />}
-      </Modal> */}
+      </Modal>
     </div>
   );
 };
