@@ -36,7 +36,7 @@ const RoutedContactPage = () => {
   const [isSuccess, setIsSuccess] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const url = "http://localhost:5000/api/form";
+  const url = "http://localhost:3000/api/form";
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -60,9 +60,9 @@ const RoutedContactPage = () => {
         setIsSuccess(false);
       }
     } catch (error) {
-          console.error("Form submission error:", error.message);
-          console.error("Full error object:", error);
-          alert("There was an issue submitting the form. Please try again.");
+      console.error("Form submission error:", error.message);
+      console.error("Full error object:", error);
+      alert("There was an issue submitting the form. Please try again.");
       // catch (error) {
       //   setIsSuccess(false);
       //   setIsModalOpen(true);
