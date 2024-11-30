@@ -77,7 +77,9 @@ app.post("/api/form", (req, res) => {
         console.error(err);
         return res.status(500).json({ message: "Database error" });
       }
-      res.status(200).json({ message: "Form submitted successfully!" });
+      res
+        .status(200)
+        .json({ success: true, message: "Form submitted successfully!" });
       console.log(result);
     }
   );

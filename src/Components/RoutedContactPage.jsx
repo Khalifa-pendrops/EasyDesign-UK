@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAngleDown,
   faMagnifyingGlassArrowRight,
   faLocationDot,
   faEnvelope,
   faMobile,
-  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Location from "./Location";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
-import Modal from "./Modal";
 import loader from "../assets/ajax-loader.gif";
+// import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+import Swal from "sweetalert2";
 
 const RoutedContactPage = () => {
   const [formData, setFormData] = useState({
@@ -31,16 +31,10 @@ const RoutedContactPage = () => {
 
   const [selectedService, setSelectedServices] = useState(" ");
   const [loading, setLoading] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const url = "http://localhost:3000/api/form";
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setIsSuccess(null);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,43 +46,45 @@ const RoutedContactPage = () => {
       const response = await axios.post(url, formData, {
         headers: { "Content-Type": "application/json" },
       });
-      if (response.data.success) {
+      if (response.data.success === true) {
+        Swal.fire({
+          title: "Success!",
+          text: "Your form was submitted successfully.",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
         console.log(response.data.message);
         setIsSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          project: "",
+          subject: "",
+          message: "",
+        });
       } else {
+        Swal.fire({
+          title: "Oops!",
+          text: "Something went wrong. Please try again.",
+          icon: "info",
+          confirmButtonText: "Ok",
+        });
         setIsSuccess(false);
       }
-      setIsModalOpen(true);
     } catch (error) {
+      Swal.fire({
+        title: "Error!",
+        text: "An error occurred while submitting the form.",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
       console.error("Form submission error:", error.message);
       console.error("Full error object:", error);
       setIsSuccess(false);
-
-      if (error.response) {
-        console.error("Response data:", error.response.data);
-        console.error("Response status:", error.response.status);
-        console.error("Response headers:", error.response.headers);
-      } else if (error.request) {
-        console.error("Request data:", error.request);
-      } else {
-        console.error("Error message:", error.message);
-      }
-      console.error(
-        "Response data:",
-        JSON.stringify(error.response.data, null, 2)
-      );
     } finally {
-      setIsModalOpen(true);
       setLoading(false);
       setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        project: "",
-        subject: "",
-        message: "",
-      });
     }
   };
 
@@ -340,54 +336,6 @@ const RoutedContactPage = () => {
         <div className="loading-container">
           <img src={loader} alt="loading gif" />
         </div>
-      )}
-
-      {/* WATCHOUT HERE!!! MODAL FOR FORM */}
-
-
-      
-      {/* <Modal isOpen={isModalOpen} closeModal={closeModal}>
-        {isSuccess === true && <SubmissionSuccessPage />}
-        {isSuccess === false && <ErrorPage />}
-      </Modal> */}
-      {/* {isModalOpen && (
-        <Modal onClose={closeModal}>
-          {isSuccess ? <SubmissionSuccessPage /> : <ErrorPage />}
-        </Modal>
-      )} */}
-
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
-          {isSuccess ? (
-            <div className="">
-              <FontAwesomeIcon
-                className="error-icon bg-warning"
-                icon={faCircleXmark}
-              />
-              <div className="d-flex flex-column justify-content-center align-items-center mt-4">
-                <h2>Success!</h2>
-                <p className="error-text text-center fs-6">
-                  Thank you for contacting us! We will get back to you shortly.
-                </p>
-              </div>
-            </div>
-          ) : (
-            <div className="">
-              <FontAwesomeIcon
-                className="error-icon bg-warning"
-                icon={faCircleXmark}
-              />
-              <div className="d-flex flex-column justify-content-center align-items-center mt-4">
-                <h2>Error!</h2>
-                <p className="error-text text-center fs-6">
-                  There was a problem with your submission. Please try again
-                  later.
-                </p>
-              </div>
-            </div>
-          )}
-          {/* <button onClick={closeModal}>Close</button> */}
-        </Modal>
       )}
     </div>
   );

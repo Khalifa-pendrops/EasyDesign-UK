@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Modal from "./Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -11,21 +10,16 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-// import SubscribeSuccessPage from "./SubscriptionSuccessPage";
-// import SubscriptionErrorPage from "./SubscriptionErrorPage";
+// import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+import Swal from "sweetalert2";
 
 const ContactUs = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(null);
 
   const url = "http://localhost:3000/api/newsletter";
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setIsSuccess(null);
-  };
 
   const handleSubmit = async (e) => {
     console.log("Data being sent:", email);
@@ -33,6 +27,15 @@ const ContactUs = () => {
       email,
     };
     e.preventDefault();
+    if (!email || !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      Swal.fire({
+        title: "Invalid Email!",
+        text: "Please enter a valid email address.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
     setLoading(true);
 
     try {
@@ -43,21 +46,37 @@ const ContactUs = () => {
       });
       console.log(response.data);
       if (response.data.success) {
+        Swal.fire({
+          title: "Success!",
+          text: "Subscription successfully.",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+        setEmail("");
         setIsSuccess(true);
         console.log("API Response: ", response.data);
       } else {
-        setIsSuccess(response.data.success || false);
+        Swal.fire({
+          title: "Oops!",
+          text: "Something went wrong. Please try again.",
+          icon: "info",
+          confirmButtonText: "Retry",
+        });
+        setIsSuccess(false);
       }
-      setIsModalOpen(true);
     } catch (error) {
+      Swal.fire({
+        title: "Error!",
+        text: "An error occurred while subcribing.",
+        icon: "error",
+        confirmButtonText: "Retry",
+      });
       setIsSuccess(false);
-      setIsModalOpen(true);
       console.error("Error:", error.response.data || error.message);
       console.error("Server Response:", error.response?.data);
     } finally {
       setLoading(false);
     }
-    setEmail("");
   };
 
   return (
@@ -111,56 +130,6 @@ const ContactUs = () => {
               {loading ? "Subscribing..." : "Subscribe"}
             </button>
           </form>
-
-          {/* MODAL FOR NEWSLETTER */}
-
-          
-          {/* OBSERVE THE MODAL HERE!!   */}
-          {/* <Modal isOpen={isModalOpen} closeModal={closeModal}>
-            {isSuccess === true && <SubscribeSuccessPage />}
-            {isSuccess === false && <SubscriptionErrorPage />}
-            {isSuccess === null && <div>Loading...</div>}
-          </Modal> */}
-          {/* {isModalOpen && (
-            <div className="modal">
-              {isSuccess === true && <SubscribeSuccessPage />}
-              {isSuccess === false && <SubscriptionErrorPage />}
-            </div>
-          )} */}
-
-          {isModalOpen && (
-            <Modal isOpen={isModalOpen} onClose={closeModal}>
-              {isSuccess ? (
-                <div>
-                  <FontAwesomeIcon
-                    className="error-icon bg-warning"
-                    icon={faCircleXmark}
-                  />
-                  <div className="d-flex flex-column justify-content-center align-items-center mt-4">
-                    <h2>Success!</h2>
-                    <p className="error-text text-center fs-6">
-                      Subscription successful!
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="">
-                  <FontAwesomeIcon
-                    className="error-icon bg-warning"
-                    icon={faCircleXmark}
-                  />
-                  <div className="d-flex flex-column justify-content-center align-items-center mt-4">
-                    <h2>Error!</h2>
-                    <p className="error-text text-center fs-6">
-                      There was a problem with your subscription. Please try
-                      again later.
-                    </p>
-                  </div>
-                </div>
-              )}
-              {/* <button onClick={closeModal}>Close</button> */}
-            </Modal>
-          )}
         </div>
         <div className="contact-info-div w-100 ">
           <h4>Contact Info</h4>
