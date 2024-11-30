@@ -29,17 +29,22 @@ app.post("/api/newsletter", (req, res) => {
   const { email } = req.body;
 
   if (!email) {
-    return res.status(400).json({ message: "Email is required please" });
+    return res
+      .status(400)
+      .json({ success: false, message: "Email is required please" });
   }
+
   const query = "INSERT INTO newsletter_subscriptions (email) VALUES (?)";
 
   db.query(query, [email], (err, result) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ message: "Database error" });
+      return res
+        .status(500)
+        .json({ success: false, message: "Database error" });
     }
 
-    // KINDLY UNCOMMENT THIS CODE TO SEND AN EMAIL UPON SUBSCRIPTION
+    // Uncomment to send an email upon subscription
     // const mailOptions = {
     //   from: process.env.EMAIL_USER,
     //   to: email,
@@ -50,12 +55,17 @@ app.post("/api/newsletter", (req, res) => {
     // transporter.sendMail(mailOptions, (err, info) => {
     //   if (err) {
     //     console.error(err);
-    //     return res.status(500).json({ message: "Failed to send email" });
+    //     return res.status(500).json({ success: false, message: "Failed to send email" });
     //   }
-    //   res.status(200).json({ message: "Successfully subscribed to newsletter!" });
+    //   res.status(200).json({ success: true, message: "Successfully subscribed to newsletter!" });
     // });
 
-    res.status(200).json({ message: "Successfully subscribed to newsletter!" });
+    res
+      .status(200)
+      .json({
+        success: true,
+        message: "Successfully subscribed to newsletter!",
+      });
     console.log(result);
   });
 });
