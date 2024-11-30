@@ -36,10 +36,12 @@ app.post("/api/newsletter", (req, res) => {
   db.query(query, [email], (err, result) => {
     if (err) {
       console.error(err);
-      return res.status(500).json({ message: "Database error" });
+      return res
+        .status(500)
+        .json({ success: false, message: "Database error" });
     }
 
-    // KINDLY UNCOMMENT THIS CODE TO SEND AN EMAIL UPON SUBSCRIPTION
+    // UNCOMMENT THIS CODE TO SEND AN EMAIL UPON SUBSCRIPTION
     // const mailOptions = {
     //   from: process.env.EMAIL_USER,
     //   to: email,
@@ -55,7 +57,10 @@ app.post("/api/newsletter", (req, res) => {
     //   res.status(200).json({ message: "Successfully subscribed to newsletter!" });
     // });
 
-    res.status(200).json({ message: "Successfully subscribed to newsletter!" });
+    res.status(200).json({
+      success: true,
+      message: "Successfully subscribed to newsletter!",
+    });
     console.log(result);
   });
 });

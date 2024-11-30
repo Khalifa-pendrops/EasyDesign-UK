@@ -48,7 +48,7 @@ const ContactUs = () => {
       if (response.data.success) {
         Swal.fire({
           title: "Success!",
-          text: "Subscription successfully.",
+          text: "Subscription successfully!",
           icon: "success",
           confirmButtonText: "OK",
         });
@@ -67,9 +67,9 @@ const ContactUs = () => {
     } catch (error) {
       Swal.fire({
         title: "Error!",
-        text: "An error occurred while subcribing.",
+        text: "There was a problem with your subscription. Please try again later.",
         icon: "error",
-        confirmButtonText: "Retry",
+        confirmButtonText: "Ok",
       });
       setIsSuccess(false);
       console.error("Error:", error.response.data || error.message);

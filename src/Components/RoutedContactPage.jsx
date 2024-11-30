@@ -49,7 +49,7 @@ const RoutedContactPage = () => {
       if (response.data.success === true) {
         Swal.fire({
           title: "Success!",
-          text: "Your form was submitted successfully.",
+          text: "Thank you for contacting us! We will get back to you shortly.",
           icon: "success",
           confirmButtonText: "OK",
         });
@@ -75,7 +75,7 @@ const RoutedContactPage = () => {
     } catch (error) {
       Swal.fire({
         title: "Error!",
-        text: "An error occurred while submitting the form.",
+        text: "There was a problem with your submission. Please try again later.",
         icon: "error",
         confirmButtonText: "Ok",
       });
