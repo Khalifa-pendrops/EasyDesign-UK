@@ -34,42 +34,55 @@ app.post("/api/newsletter", (req, res) => {
       .json({ success: false, message: "Email is required please" });
   }
 
-  const query = "INSERT INTO newsletter_subscriptions (email) VALUES (?)";
+  const checkQuery = "SELECT * FROM newsletter_subscriptions WHERE email = ?";
 
-  db.query(query, [email], (err, result) => {
-    if (err) {
-      console.error(err);
+  db.query(checkQuery, [email], (checkErr, checkResult) => {
+    if (checkErr) {
+      console.error(checkErr);
       return res
         .status(500)
         .json({ success: false, message: "Database error" });
     }
 
+    if (checkResult.length > 0) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Email already exists" });
+    }
 
-    // Uncomment to send an email upon subscription
+    const insertQuery =
+      "INSERT INTO newsletter_subscriptions (email) VALUES (?)";
 
-    // const mailOptions = {
-    //   from: process.env.EMAIL_USER,
-    //   to: email,
-    //   subject: "Newsletter Subscription",
-    //   text: "Thank you for subscribing to our newsletter",
-    // };
+    db.query(insertQuery, [email], (insertErr, insertResult) => {
+      if (insertErr) {
+        console.error(insertErr);
+        return res
+          .status(500)
+          .json({ success: false, message: "Database error" });
+      }
 
-    // transporter.sendMail(mailOptions, (err, info) => {
-    //   if (err) {
-    //     console.error(err);
-    //     return res.status(500).json({ success: false, message: "Failed to send email" });
-    //   }
-    //   res.status(200).json({ success: true, message: "Successfully subscribed to newsletter!" });
-    // });
+      // Uncomment to send an email upon subscription
+      // const mailOptions = {
+      //   from: process.env.EMAIL_USER,
+      //   to: email,
+      //   subject: "Newsletter Subscription",
+      //   text: "Thank you for subscribing to our newsletter",
+      // };
 
+      // transporter.sendMail(mailOptions, (err, info) => {
+      //   if (err) {
+      //     console.error(err);
+      //     return res.status(500).json({ success: false, message: "Failed to send email" });
+      //   }
+      //   res.status(200).json({ success: true, message: "Successfully subscribed to newsletter!" });
+      // });
 
-    res
-      .status(200)
-      .json({
+      res.status(200).json({
         success: true,
         message: "Successfully subscribed to newsletter!",
       });
-    console.log(result);
+      console.log(insertResult);
+    });
   });
 });
 
@@ -88,7 +101,9 @@ app.post("/api/form", (req, res) => {
     (err, result) => {
       if (err) {
         console.error(err);
-        return res.status(500).json({ message: "Database error" });
+        return res
+          .status(500)
+          .json({ success: false, message: "Database error" });
       }
       res
         .status(200)

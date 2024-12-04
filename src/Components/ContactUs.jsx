@@ -45,7 +45,7 @@ const ContactUs = () => {
         },
       });
       console.log(response.data);
-      if (response.data.success) {
+      if (response.data.success === true) {
         Swal.fire({
           title: "Success!",
           text: "Subscription successfully!",
@@ -65,12 +65,26 @@ const ContactUs = () => {
         setIsSuccess(false);
       }
     } catch (error) {
-      Swal.fire({
-        title: "Error!",
-        text: "There was a problem with your subscription. Please try again later.",
-        icon: "error",
-        confirmButtonText: "Ok",
-      });
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.error === "Email already exists"
+      ) {
+        Swal.fire({
+          title: "Email exists!",
+          text: "This email is already subscribed.",
+          icon: "warning",
+          confirmButtonText: "Ok",
+        });
+      } else {
+        Swal.fire({
+          title: "Error!",
+          text: "There was a problem with your subscription. Please try again later.",
+          icon: "error",
+          confirmButtonText: "Ok",
+        });
+      }
+
       setIsSuccess(false);
       console.error("Error:", error.response.data || error.message);
       console.error("Server Response:", error.response?.data);

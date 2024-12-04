@@ -1,5 +1,4 @@
 import React from "react";
-// import React, { lazy, Suspense } from "react";
 import Header from "./Header";
 import HomeHero from "./HomeHero";
 import Services from "./Services";

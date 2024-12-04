@@ -4,18 +4,18 @@ import heroimage from "../assets/hero-image.png";
 
 function HomeHero() {
   return (
-    <div className="hero-container-main container-fluid d-flex justify-content-center align-items-center pt-5 position-relative">
+    <div className="hero-container-main container-fluid d-flex justify-content-center align-items-center position-relative min-vh-100">
       <section
         id="home"
-        className="d-flex flex-column justify-content-center align-items-center container-xxl pt-5"
+        className="d-flex flex-column justify-content-center align-items-center container-xxl pt-5 p-xl-0 "
       >
-        <div className="hero-container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 container-sm pt-5">
+        <div className="hero-container d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 container-fluid container-xl-sm">
           <div
-            className="hero-left d-flex flex-column justify-content-center align-items-md-start gap-2"
+            className="hero-left d-flex flex-column justify-content-center align-items-md-start gap-2 h-100 w-100 container-fluid "
             data-aos="fade-right"
           >
             <h1
-              className="colored-h1-text fs-xxl-0"
+              className="colored-h1-text fs-xxl-0 w-100 w-xl-50"
               data-aos="fade-right"
               data-aos-duration="1000"
               data-aos-delay="0"
@@ -35,7 +35,7 @@ function HomeHero() {
 
             <Link to="/routedcontact">
               <button
-                className="home-hero-btn btn py-4 px-5 py-sm-3 px-sm-4 "
+                className="home-hero-btn btn py-xl-4 px-3 py-3 px-sm-4 fw-bold"
                 data-aos="fade-right"
                 data-aos-duration="1000"
                 data-aos-delay="100"
@@ -50,7 +50,7 @@ function HomeHero() {
             src={heroimage}
             alt="hero image"
           />
-          <div className="shape-container container-fluid d-flex justify-content-center align-items-center position-absolute overflow-hidden top-0 start-0">
+          <div className="shape-container container-fluid d-flex justify-content-center align-items-center position-absolute overflow-visible top-0 start-0 ">
             <div className="triangle triangle-1 position-absolute"></div>
             <div className="triangle triangle-2 position-absolute"></div>
             <div className="circle-home circle-home-1 position-absolute"></div>

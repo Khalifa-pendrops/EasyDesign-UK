@@ -17,7 +17,7 @@ function Services() {
   const isVisible = useOnScreen(ref, "-100px");
   return (
     <div
-      className="section-container-main container-fluid d-flex justify-content-center align-items-center mt-5"
+      className="section-container-main container-fluid d-flex justify-content-center align-items-center "
       ref={ref}
       style={{
         minHeight: "100vh",
@@ -28,28 +28,28 @@ function Services() {
     >
       <section
         id="services"
-        className="services-section container-fluid d-flex flex-column justify-content-center align-items-center text-center"
+        className="services-section container d-flex flex-column justify-content-center align-items-center text-center"
       >
         <div
-          className="home-service-head d-flex flex-column justify-content-center align-items-center"
+          className="home-service-head d-flex flex-column justify-content-center align-items-center "
           data-aos="fade-up"
         >
           <h4 className="colored-h4-text fs-3 fs-xxl-0">Our Services</h4>
           <h1 className="colored-h1-text fw-bolder about-h1 fs-1 fs-xxl-0">
             What We Can Do For You
           </h1>
-          <p className="lh-lg w-50">
+          <p className="lh-lg w-lg-50 w-100 container">
             At Easy Design UK, we provide a range of digital solutions tailored
             to elevate your business. Our expertise spans from web development
             to digital marketing, ensuring your brand reaches its full potential
             online.
           </p>
         </div>
-        <div className="container-fluid  my-5 d-flex justify-content-center align-items-center">
-          <div className="container row g-4 d-flex justify-content-center align-items-center">
+        <div className="container-xl-xl my-5 d-flex justify-content-center align-items-center ">
+          <div className="container-xl-xl row g-4 d-flex justify-content-center align-items-center ">
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-12">
               <div
-                className="web-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
+                className=" web-dev-div border d-flex flex-column justify-content-center align-items-center p-4 rounded gap-2"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >

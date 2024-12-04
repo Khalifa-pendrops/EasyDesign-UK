@@ -108,7 +108,7 @@ nav ul li a:focus {
 
 @media (max-width: 992px) {
     .hero-container-main {
-        margin-top: 5rem !important;
+        margin-top: 10rem !important;
     }
 
     .home-hero-image {
@@ -132,7 +132,14 @@ nav ul li a:focus {
     background: rgb(246, 246, 246);
     right: 0%;
     top: -15%;
-    z-index: -1;
+    z-index: 1000;
+}
+
+@media (max-width: 992px){
+    .heart{
+        width: 50%;
+        margin-right: 2rem !important;
+    }
 }
 
 
@@ -301,7 +308,6 @@ nav ul li a:focus {
 .bg-transparent {
     background-color: transparent !important;
     transition: background-color 0.3s ease-in-out !important;
-
 }
 
 .display-6 {
@@ -414,7 +420,21 @@ nav ul li a:focus {
 
 .hero-container-main,
 .about-container-main {
-    height: 80vh !important;
+    height: 100% !important;
+}
+
+@media (max-width: 992px) {
+    .about-container-main {
+        margin: 8rem 0 !important;
+    }
+}
+
+.about-hero-image-div{
+    width: 100%;
+}
+
+.about-hero-image{
+    width: 100%;
 }
 
 .home-hero-btn {
@@ -422,6 +442,7 @@ nav ul li a:focus {
     color: var(--bs-button-text) !important;
     border-radius: 50px !important;
     border: none !important;
+    font-size: 1rem !important;
 }
 
 .home-hero-btn:focus,
@@ -477,16 +498,13 @@ nav ul li a:focus {
 
 .home-about-btn {
     background-color: var(--bs-button-bg) !important;
-    color: var(--bs-button-text) !important;
-    border-radius: 50px !important;
-    border: none !important;
+        color: var(--bs-button-text) !important;
+        border-radius: 50px !important;
+        border: none !important;
+        font-size: 1rem !important;
 }
 
-@media (max-width: 992px) {
-    .about-container-main {
-        margin: 10rem 0 !important;
-    }
-}
+
 
 @media (max-width: 768px) {
     .about-top-header .display-3 {
@@ -628,7 +646,7 @@ nav ul li a:focus {
 .colored-h1-text {
     color: #343536;
     font-weight: 600;
-    font-size: 3.4rem !important;
+    /* font-size: 3.4rem !important; */
     color: var(--bs-h1-text);
 }
 
@@ -1409,4 +1427,3 @@ form textarea {
     left: 50%;
     transform: translate(-50%, -50%) !important;
 }
-

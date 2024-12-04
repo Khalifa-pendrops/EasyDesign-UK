@@ -22,16 +22,26 @@ function Header() {
     };
   }, []);
 
+  const reloadPage = (e) => {
+    e.preventDefault();
+    window.location.href = "/";
+  };
+
   return (
     <div
       className={`fixed-position ${
         scrolled ? "fixed-position-scrolled" : "bg-transparent"
       }`}
     >
-      <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid px-5">
           <Link to="/" className="navbar-brand">
-            <img src={logo} alt="logo" width="60px" />
+            <img
+              src={logo}
+              alt="logo"
+              width="60px"
+              onClick={() => window.location.reload()}
+            />
           </Link>
 
           <button
@@ -52,7 +62,7 @@ function Header() {
             // data-aos="fade-down"
           >
             <ul className="navbar-nav ms-auto pt-5">
-              <li className="nav-item">
+              <li className="nav-item" onClick={reloadPage}>
                 <Link to="/" className="nav-link fs-5">
                   Home
                 </Link>

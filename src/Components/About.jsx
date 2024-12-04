@@ -8,10 +8,11 @@ function About() {
   const isVisible = useOnScreen(ref, "0px");
   return (
     <div
-      className="about-container-main container-xxl d-flex justify-content-center align-items-center"
+      className="about-container-main containe d-flex justify-content-center align-items-center"
       ref={ref}
       style={{
         minHeight: "100vh",
+        height: "100%",
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateY(0)" : "translateY(100px)",
         transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
@@ -19,7 +20,7 @@ function About() {
     >
       <section
         id="about"
-        className="home-about-div container-xxl container-md d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 px-5 py-5 px-sm-0 py-sm-0"
+        className="home-about-div container container-sm d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 "
       >
         <div className="about-hero-image-div d-none d-md-inline">
           <img
@@ -31,12 +32,12 @@ function About() {
           />
         </div>
         <div
-          className="home-about-right container-fluid d-flex flex-column justify-content-center align-items-start px-5 px-xxl-0 mx-2 mx-xxl-0"
+          className="home-about-right container d-flex flex-column justify-content-center align-items-start ps-4 ps-xl-0"
           data-aos="fade-up"
         >
           <div className="about-top-header" data-aos="fade-up">
             <h4 className="colored-h4-text fs-3 fs-xxl-0">About Us</h4>
-            <h1 className="colored-h1-text  fw-bolder fs-1 fs-xxl-0">
+            <h1 className="colored-h1-text  fw-bolder fs-1 fs-md-2 fs-lg-3 fs-xxl-0">
               Crafting Digital Experiences for Your Success
             </h1>
           </div>
@@ -61,8 +62,8 @@ function About() {
             digital design and development.
           </p>
           <Link to="/routedcontact">
-            <button className="home-about-btn btn py-4 px-5 py-sm-3 px-sm-4">
-              Talk To Us
+            <button className="home-about-btn btn py-xl-4 px-3 py-3 px-xl-5 fw-bold">
+              Talk To Us 
             </button>
           </Link>
         </div>
