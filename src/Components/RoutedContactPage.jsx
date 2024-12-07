@@ -101,11 +101,14 @@ const RoutedContactPage = () => {
     <div className="rounted-contect-main-container">
       <Header />
       <div className="routed-contact-div container-sm-fluid">
-        <div className="routed-contact-header w-100">
-          <h1>Contact Us</h1>
-          <Link className="contact-linked" to="/">
-            Home / <span>Contact</span>
-          </Link>
+        <div className="routed-contact-header container-fluid d-flex flex-column justify-content-center align-items-center w-100">
+          <div className="container d-flex flex-column justify-content-center align-items-center routed-header-texts">
+            <h1 className=" bold-h1">Contact Us</h1>
+            <Link className="text-decoration-none" to="/">
+              <p>Home / <span>Contact</span></p>
+            </Link>
+            {/* <p><Link to='/'>Home</Link><span>Contact</span></p> */}
+          </div>
           <div
             className="rectangles-container container-fluid"
             data-aos="fade-up"
@@ -130,12 +133,12 @@ const RoutedContactPage = () => {
 
         <div className="routed-contact-card container-fluid  position-relative">
           <div
-            className="routed-contact-card-head d-flex flex-column justify-content-center align-items-center gap-4"
+            className="routed-contact-card-head d-flex flex-column justify-content-center align-items-center gap-4 container"
             data-aos="fade-up"
           >
-            <h4 className="">Contact Us</h4>
-            <h1 className="bold-h1">Get In Touch With Us</h1>
-            <p className="head-text w-100">
+            <h4 className="fs-1">Contact Us</h4>
+            <h1 className="bold-h1 container d-flex justify-content-center align-items-center text-center">Get In Touch With Us</h1>
+            <p className="head-text container-fluid">
               We'd love to hear from you! Whether you have a question about our
               services, need a project quote, or just want to say hello, our
               team is here to help. Reach out to us using the form below, and
@@ -265,7 +268,7 @@ const RoutedContactPage = () => {
             >
               <div className="form-right-item d-flex justify-content-center align-item-center">
                 <FontAwesomeIcon
-                  className="routed-contact-icon"
+                  className="routed-contact-icon p-4"
                   icon={faLocationDot}
                 />
                 <div className="right-item d-flex flex-column justify-content-center align-item-center">
@@ -276,7 +279,7 @@ const RoutedContactPage = () => {
 
               <div className="form-right-item">
                 <FontAwesomeIcon
-                  className="routed-contact-icon"
+                  className="routed-contact-icon p-4"
                   icon={faMobile}
                 />
                 <div className="right-item">
@@ -287,19 +290,19 @@ const RoutedContactPage = () => {
 
               <div className="form-right-item">
                 <FontAwesomeIcon
-                  className="routed-contact-icon"
+                  className="routed-contact-icon p-4"
                   icon={faEnvelope}
                 />
-                <div className="right-item">
+                <div className="right-item d-flex flex-column align-items-start justify-content-center">
                   <p>Email</p>
-                  <span>info@easydesignuk.co.uk</span>
+                  <span className="text-wrap text-md-nowrap ">info@easydesignuk.co.uk</span>
                 </div>
               </div>
 
               <div className="row-icons">
                 <a href="">
                   <FontAwesomeIcon
-                    className="routed-contact-icon magnifying-glass"
+                    className="routed-contact-icon magnifying-glass p-4"
                     icon={faMagnifyingGlassArrowRight}
                   />
                 </a>
@@ -308,7 +311,7 @@ const RoutedContactPage = () => {
                   target="_blank"
                 >
                   <FontAwesomeIcon
-                    className="routed-social-icons"
+                    className="routed-social-icons p-4"
                     icon={faFacebook}
                   />
                 </a>
@@ -317,7 +320,7 @@ const RoutedContactPage = () => {
                   target="_blank"
                 >
                   <FontAwesomeIcon
-                    className="routed-social-icons"
+                    className="routed-social-icons p-4"
                     icon={faInstagram}
                   />
                 </a>

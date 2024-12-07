@@ -10,7 +10,6 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-// import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import Swal from "sweetalert2";
 

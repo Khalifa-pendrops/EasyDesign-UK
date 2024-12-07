@@ -15,7 +15,7 @@ function HomeHero() {
             data-aos="fade-right"
           >
             <h1
-              className="colored-h1-text fs-xxl-0 w-100 w-xl-50"
+              className="colored-h1-text  fw-bolder fs-1 fs-md-2 fs-lg-3 fs-xxl-0"
               data-aos="fade-right"
               data-aos-duration="1000"
               data-aos-delay="0"
@@ -50,8 +50,8 @@ function HomeHero() {
             src={heroimage}
             alt="hero image"
           />
-          <div className="shape-container container-fluid d-flex justify-content-center align-items-center position-absolute overflow-visible top-0 start-0 ">
-            <div className="triangle triangle-1 position-absolute"></div>
+          <div className="shape-container container-fluid d-flex justify-content-center align-items-center position-absolute overflow- top-0 start-0 ">
+            <div className="container-sm triangle triangle-1 position-absolute "></div>
             <div className="triangle triangle-2 position-absolute"></div>
             <div className="circle-home circle-home-1 position-absolute"></div>
             <div className="circle-home circle-home-2 position-absolute"></div>

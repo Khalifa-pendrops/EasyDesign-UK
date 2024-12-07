@@ -86,7 +86,7 @@ function Features() {
 
   return (
     <div
-      className="feature-main-container container-fluid d-flex justify-content-center align-items-center gap-5"
+      className="feature-main-container container-fluid d-flex justify-content-center align-items-center gap-5 mt-2"
       ref={ref}
       style={{
         opacity: isVisible ? 1 : 0,
@@ -98,7 +98,10 @@ function Features() {
         id="features"
         className="features-section container d-flex flex-xl-row flex-column  justify-content-center align-items-center my-5"
       >
-        <div className="feature-div-left w-100 d-flex flex-column gap-3" data-aos="fade-left">
+        <div
+          className="feature-div-left w-100 d-flex flex-column gap-3"
+          data-aos="fade-left"
+        >
           {divsData.map((div, index) => (
             <div
               key={index}

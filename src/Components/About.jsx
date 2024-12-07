@@ -11,7 +11,6 @@ function About() {
       className="about-container-main containe d-flex justify-content-center align-items-center"
       ref={ref}
       style={{
-        minHeight: "100vh",
         height: "100%",
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateY(0)" : "translateY(100px)",
@@ -63,7 +62,7 @@ function About() {
           </p>
           <Link to="/routedcontact">
             <button className="home-about-btn btn py-xl-4 px-3 py-3 px-xl-5 fw-bold">
-              Talk To Us 
+              Talk To Us
             </button>
           </Link>
         </div>

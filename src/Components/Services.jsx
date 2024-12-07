@@ -17,7 +17,7 @@ function Services() {
   const isVisible = useOnScreen(ref, "-100px");
   return (
     <div
-      className="section-container-main container-fluid d-flex justify-content-center align-items-center "
+      className="section-container-main container-fluid d-flex justify-content-center align-items-center"
       ref={ref}
       style={{
         minHeight: "100vh",

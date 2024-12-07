@@ -11,7 +11,7 @@ function Pricing() {
 
   return (
     <div
-      className=" border d-flex flex-column justify-content-center align-items-center"
+      className="d-flex flex-column justify-content-center align-items-center mt-2"
       ref={ref}
       style={{
         opacity: isVisible ? 1 : 0,
@@ -21,10 +21,10 @@ function Pricing() {
     >
       <section
         id="pricing"
-        className="pricing-parent-container container-sm d-flex flex-column justify-content-center align-items-center gap-5 border"
+        className="pricing-parent-container container-sm d-flex flex-column justify-content-center align-items-center gap-5 mt-5 "
       >
         <div
-          className="pricing-top-div d-flex flex-column justify-content-center align-items-center text-center border"
+          className="pricing-top-div d-flex flex-column justify-content-center align-items-center text-center px-1"
           data-aos="fade-up"
         >
           <h4 className="colored-h4-text fs-3 fs-xxl-0">Pricing Plan</h4>
@@ -40,21 +40,21 @@ function Pricing() {
           </p>
         </div>
 
-        <div className="pricing-bottom-div row justify-content-center align-items-start container-fluid-fluid border">
+        <div className="pricing-bottom-div row justify-content-center align-items-start container-container">
           <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4">
             <div
               className="pricing-card d-flex flex-column justify-content-center align-items-center gap-2 "
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div className="pricing-card-top text-center">
+              <div className="pricing-card-top text-center my-4">
                 <h3>Basic</h3>
-                <h2>
+                <h2 className=" fs-1 ">
                   <span className="pound-span-1">&pound;</span>
                   Starting from <br /> 500
                 </h2>
               </div>
-              <div className="pricing-card-bottom p-5">
+              <div className="pricing-card-bottom">
                 <p className="d-flex align-items-center gap-2">
                   <FontAwesomeIcon className="check-icon" icon={faCheck} />
                   Standard Website Design
@@ -84,7 +84,7 @@ function Pricing() {
                   Video Editing
                 </p>
                 <Link to="/routedcontact">
-                  <button className="pricing-btn btn border">
+                  <button className="pricing-btn btn border px-3 py-2 px-sm-4 px-sm-3 px-md-5 py-md-4 px-lg-6 fs-6 fs-sm-5 fs-md-4">
                     Request a Quote
                   </button>
                 </Link>
@@ -102,11 +102,13 @@ function Pricing() {
                 <div className="price-badge mobile-badge">
                   <span>Popular</span>
                 </div>
-                <h3 className="pricing-card-purple2">Standard</h3>
-                <h2 className="pricing-card-purple2">
-                  <span className="pound-span-2">&pound;</span>
-                  Starting from <br /> 1,500
-                </h2>
+                <div className="my-4">
+                  <h3 className="pricing-card-purple2 fs-1">Standard</h3>
+                  <h2 className="pricing-card-purple2 fs-1">
+                    <span className="pound-span-2">&pound;</span>
+                    Starting from <br /> 1,500
+                  </h2>
+                </div>
               </div>
               <div className="pricing-card-bottom p-5">
                 <p className="d-flex align-items-center gap-2">
@@ -146,7 +148,7 @@ function Pricing() {
                   Advanced Customizations
                 </p>
                 <Link to="/routedcontact">
-                  <button className="pricing-btn btn border ">
+                  <button className="pricing-btn btn border px-3 py-2 px-sm-4 px-sm-3 px-md-5 py-md-4 px-lg-6 fs-6 fs-sm-5 fs-md-4">
                     Request a Quote
                   </button>
                 </Link>
@@ -160,9 +162,9 @@ function Pricing() {
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <div className="pricing-card-top text-center">
+              <div className="pricing-card-top text-center my-4">
                 <h3 className="pricing-card-purple">Premium</h3>
-                <h2 className="pricing-card-purple">
+                <h2 className="pricing-card-purple fs-1">
                   <span className="pound-span-3">&pound;</span>
                   Starting from <br /> 3,000
                 </h2>
@@ -205,7 +207,7 @@ function Pricing() {
                   Role-based Access
                 </p>
                 <Link to="/routedcontact">
-                  <button className="pricing-btn btn border">
+                  <button className="pricing-btn btn border px-3 py-2 px-sm-4 px-sm-3 px-md-5 py-md-4 px-lg-6 fs-6 fs-sm-5 fs-md-4">
                     Request a Quote
                   </button>
                 </Link>
