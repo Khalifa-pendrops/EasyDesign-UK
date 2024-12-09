@@ -14,10 +14,8 @@ function Header() {
   };
 
   useEffect(() => {
-    //this is the setup for the event listener when this component mounts
     window.addEventListener("scroll", handleScroll);
     return () => {
-      //this will remove event listener when the component unmounts
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -28,11 +26,6 @@ function Header() {
   };
 
   return (
-    // <div
-    //   className={` container-fluid py- border border-primary fixed-position ${
-    //     scrolled ? "fixed-position-scrolled" : "bg-transparent"
-    //   }`}
-    // >
     <nav
       className={`navbar navbar-expand-lg fixed-position container-fluid d-flex justify-content-center align-items-center  ${
         scrolled ? "fixed-position-scrolled" : "bg-transparent"
@@ -63,7 +56,6 @@ function Header() {
         <div
           className="toggle-menu collapse navbar-collapse justify-content-end overflow-hidden"
           id="main-nav"
-          // data-aos="fade-down"
         >
           <ul className="navbar-nav ms-auto overflow-hiddden d-flex justify-content-center align-items-start">
             <li className="nav-item" onClick={reloadPage}>
@@ -95,7 +87,6 @@ function Header() {
         </div>
       </div>
     </nav>
-    // </div>
   );
 }
 

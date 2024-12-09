@@ -11,7 +11,7 @@ import "./Style.css";
 
 const Home = () => {
   return (
-    <div className="container-fluid">
+    <div>
       <Header />
       <HomeHero />
       <About />

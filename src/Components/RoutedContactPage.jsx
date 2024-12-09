@@ -15,7 +15,6 @@ import ContactUs from "./ContactUs";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 import loader from "../assets/ajax-loader.gif";
-// import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 import Swal from "sweetalert2";
 
@@ -107,7 +106,6 @@ const RoutedContactPage = () => {
             <Link className="text-decoration-none" to="/">
               <p>Home / <span>Contact</span></p>
             </Link>
-            {/* <p><Link to='/'>Home</Link><span>Contact</span></p> */}
           </div>
           <div
             className="rectangles-container container-fluid"
@@ -201,9 +199,6 @@ const RoutedContactPage = () => {
                     onChange={handleChange}
                     disabled={loading}
                   >
-                    {/* <option value="" disabled selected hidden>
-                      Choose a service
-                    </option> */}
 
                     <option
                       className="disabled-colored-select"
@@ -238,18 +233,6 @@ const RoutedContactPage = () => {
                   required
                   disabled={loading}
                 ></textarea>
-                {/* <button
-                  className="routed-contact-btn"
-                  type="submit"
-                  value="Submit"
-                  disabled={loading}
-                >
-                  {loading ? (
-                    <img src={loader} alt="Loading..." width={20} />
-                  ) : (
-                    "Send Message"
-                  )}
-                </button> */}
 
                 <button
                   className="routed-contact-btn"
