@@ -937,9 +937,14 @@ footer {
     margin: 4rem 0;
 }
 
-.routed-header-texts p {
+.routed-header-texts {
+    z-index: 1000;
+}
+
+.routed-hero-header-texts {
     color: var(--bs-gray);
 }
+
 
 .routed-header-texts p span {
     color: #bf8417 !important;

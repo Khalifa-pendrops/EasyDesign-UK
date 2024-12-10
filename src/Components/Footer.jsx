@@ -10,7 +10,7 @@ function Footer() {
           <div className="container d-flex flex-column flex-md-row align-items-center justify-content-start">
             <p className="footer-copyright d-flex justify-content-start align-items-center  gap-1 containe">
               <FontAwesomeIcon className="copyright-icon" icon={faCopyright} />
-              <a href="/" className="text-nowrap">
+              <a href="#routed-header" className="text-nowrap">
                 Easy Design UK,
               </a>
               All rights reserved.

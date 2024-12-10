@@ -100,34 +100,43 @@ const RoutedContactPage = () => {
     <div className="rounted-contect-main-container">
       <Header />
       <div className="routed-contact-div container-sm-fluid">
-        <div className="routed-contact-header container-fluid d-flex flex-column justify-content-center align-items-center w-100">
-          <div className="container d-flex flex-column justify-content-center align-items-center routed-header-texts">
-            <h1 className=" bold-h1">Contact Us</h1>
-            <Link className="text-decoration-none" to="/">
-              <p>Home / <span>Contact</span></p>
-            </Link>
-          </div>
-          <div
-            className="rectangles-container container-fluid"
-            data-aos="fade-up"
-          >
-            {/* THERE IS SOME ALIGNMENT ISSUES WITH THE RECTANGLES. FIX! */}
-            <div className="ractangle-div container-fluid d-flex flex-column flex-sm-row gap-sm-2 justify-content-center align-items-center">
-              <div className="rectangle rectangle-1 ratio raio-4x3"></div>
-              <div className="rectangle rectangle-2 ratio raio-4x3"></div>
-              <div className="rectangle rectangle-3 ratio raio-4x3"></div>
-              <div className="rectangle rectangle-4 ratio raio-16x9"></div>
-              <div className="rectangle rectangle-5 ratio raio-16x9"></div>
-              <div className="rectangle rectangle-6 ratio raio-16x9"></div>
-              <div className="rectangle rectangle-7 ratio raio-16x9"></div>
-              <div className="rectangle rectangle-8 ratio raio-16x9"></div>
-              <div className="rectangle rectangle-9 ratio raio-16x9"></div>
-              <div className="rectangle rectangle-10 ratio raio-16x9"></div>
+        <section id="routed-header">
+          {" "}
+          <div className="routed-contact-header container-fluid d-flex flex-column justify-content-center align-items-center w-100">
+            <div className="container d-flex flex-column justify-content-center align-items-center routed-header-texts">
+              <h1 className=" bold-h1">Contact Us</h1>
+              <p>
+                <Link
+                  className="text-decoration-none routed-hero-header-texts"
+                  to="/"
+                >
+                  Home /
+                </Link>
+                <span> Contact</span>
+              </p>
             </div>
-            <div className="circle circle-left"></div>
-            <div className="circle circle-right"></div>
+            <div
+              className="rectangles-container container-fluid"
+              data-aos="fade-up"
+            >
+              {/* THERE IS SOME ALIGNMENT ISSUES WITH THE RECTANGLES. FIX! */}
+              <div className="ractangle-div container-fluid d-flex flex-column flex-sm-row gap-sm-2 justify-content-center align-items-center">
+                <div className="rectangle rectangle-1 ratio raio-4x3"></div>
+                <div className="rectangle rectangle-2 ratio raio-4x3"></div>
+                <div className="rectangle rectangle-3 ratio raio-4x3"></div>
+                <div className="rectangle rectangle-4 ratio raio-16x9"></div>
+                <div className="rectangle rectangle-5 ratio raio-16x9"></div>
+                <div className="rectangle rectangle-6 ratio raio-16x9"></div>
+                <div className="rectangle rectangle-7 ratio raio-16x9"></div>
+                <div className="rectangle rectangle-8 ratio raio-16x9"></div>
+                <div className="rectangle rectangle-9 ratio raio-16x9"></div>
+                <div className="rectangle rectangle-10 ratio raio-16x9"></div>
+              </div>
+              <div className="circle circle-left"></div>
+              <div className="circle circle-right"></div>
+            </div>
           </div>
-        </div>
+        </section>
 
         <div className="routed-contact-card container-fluid  position-relative">
           <div
@@ -135,7 +144,9 @@ const RoutedContactPage = () => {
             data-aos="fade-up"
           >
             <h4 className="fs-1">Contact Us</h4>
-            <h1 className="bold-h1 container d-flex justify-content-center align-items-center text-center">Get In Touch With Us</h1>
+            <h1 className="bold-h1 container d-flex justify-content-center align-items-center text-center">
+              Get In Touch With Us
+            </h1>
             <p className="head-text container-fluid">
               We'd love to hear from you! Whether you have a question about our
               services, need a project quote, or just want to say hello, our
@@ -199,7 +210,6 @@ const RoutedContactPage = () => {
                     onChange={handleChange}
                     disabled={loading}
                   >
-
                     <option
                       className="disabled-colored-select"
                       value="disabled"
@@ -278,7 +288,9 @@ const RoutedContactPage = () => {
                 />
                 <div className="right-item d-flex flex-column align-items-start justify-content-center">
                   <p>Email</p>
-                  <span className="text-wrap text-md-nowrap ">info@easydesignuk.co.uk</span>
+                  <span className="text-wrap text-md-nowrap ">
+                    info@easydesignuk.co.uk
+                  </span>
                 </div>
               </div>
 
