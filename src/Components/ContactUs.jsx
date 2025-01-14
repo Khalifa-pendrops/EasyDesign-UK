@@ -7,7 +7,7 @@ import {
   faEnvelope,
   faPhone,
   faLocationDot,
-  faCircleXmark,
+  // faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "sweetalert2/src/sweetalert2.scss";
@@ -70,16 +70,16 @@ const ContactUs = () => {
         error.response.data.error === "Email already exists"
       ) {
         Swal.fire({
-          title: "Email exists!",
-          text: "This email is already subscribed.",
-          icon: "warning",
+          title: "Error!",
+          text: "There was a problem with your subscription. Please try again later.",
+          icon: "error",
           confirmButtonText: "Ok",
         });
       } else {
         Swal.fire({
-          title: "Error!",
-          text: "There was a problem with your subscription. Please try again later.",
-          icon: "error",
+          title: "Email exists!",
+          text: "This email is already subscribed.",
+          icon: "warning",
           confirmButtonText: "Ok",
         });
       }

@@ -31,7 +31,7 @@ function Header() {
         scrolled ? "fixed-position-scrolled" : "bg-transparent"
       }`}
     >
-      <div className="container px-4">
+      <div className="container px-4 ">
         <Link to="/" className="navbar-brand">
           <img
             src={logo}
@@ -54,7 +54,7 @@ function Header() {
         </button>
 
         <div
-          className="toggle-menu collapse navbar-collapse justify-content-end overflow-hidden"
+          className="toggle-menu collapse navbar-collapse overflow-hidden"
           id="main-nav"
         >
           <ul className="navbar-nav ms-auto overflow-hiddden d-flex justify-content-center align-items-start">

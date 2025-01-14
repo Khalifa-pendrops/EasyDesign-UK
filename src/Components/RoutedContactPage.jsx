@@ -169,7 +169,7 @@ const RoutedContactPage = () => {
               >
                 <div className="input-row d-flex flex-column flex-lg-row justify-content-center alighn-items-center w-100 m-0">
                   <input
-                    className="w-100"
+                    className="w-100 styled-input"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -179,6 +179,7 @@ const RoutedContactPage = () => {
                     disabled={loading}
                   />
                   <input
+                    className="w-100 styled-input"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -191,6 +192,7 @@ const RoutedContactPage = () => {
 
                 <div className="input-row d-flex flex-column flex-lg-row gap-2 justify-content-center alighn-items-center w-100 m-0">
                   <input
+                    className="styled-input w-100"
                     type="tel"
                     name="phone"
                     value={formData.phone}
@@ -226,7 +228,7 @@ const RoutedContactPage = () => {
                   </select>
                 </div>
                 <input
-                  className="w-100"
+                  className="w-100 styled-input"
                   type="text"
                   name="subject"
                   value={formData.subject}
@@ -236,6 +238,7 @@ const RoutedContactPage = () => {
                   disabled={loading}
                 />
                 <textarea
+                  className="styled-input"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}

@@ -17,7 +17,7 @@ function Services() {
   const isVisible = useOnScreen(ref, "-100px");
   return (
     <div
-      className="section-container-main container-fluid d-flex justify-content-center align-items-center"
+      className="section-container-main container-fluid d-flex justify-content-center align-items-center mt-xxl-4"
       ref={ref}
       style={{
         minHeight: "100vh",
@@ -28,10 +28,10 @@ function Services() {
     >
       <section
         id="services"
-        className="services-section container d-flex flex-column justify-content-center align-items-center text-center"
+        className="services-section container d-flex flex-column justify-content-center align-items-center text-center mt-xxl-5"
       >
         <div
-          className="home-service-head d-flex flex-column justify-content-center align-items-center "
+          className="home-service-head d-flex flex-column justify-content-center align-items-center mt-xxl-5"
           data-aos="fade-up"
         >
           <h4 className="colored-h4-text fs-3 fs-xxl-0">Our Services</h4>

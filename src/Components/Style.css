@@ -119,8 +119,7 @@ nav ul li a:focus {
 }
 
 .shape-container {
-    height: 88vh !important;
-    z-index: 0;
+    z-index: 1;
 }
 
 
@@ -166,18 +165,14 @@ nav ul li a:focus {
     }
 }
 
-.triangle {
-    /* overflow: hidden; */
-}
-
 .triangle-1 {
     width: 0;
     height: 0;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
     border-bottom: 50px solid rgb(233, 233, 203);
-    left: 0;
-    top: 120px;
+    left: 0px;
+    top: 20%;
     transform: translateY(-50%);
     animation: move-to-fro 15s ease-in-out infinite;
 }
@@ -200,34 +195,34 @@ nav ul li a:focus {
     border-right: 30px solid transparent;
     border-bottom: 50px solid rgb(233, 233, 203);
     position: absolute;
-    top: 35%;
-    left: 0%;
+    top: 60%;
+    left: 27.2%;
 }
 
 @keyframes move-to-fro {
     0% {
-        left: 0;
+        transform: translateY(-50%) translateX(0);
     }
 
     50% {
-        left: 400px;
+        transform: translateY(-50%) translateX(200px);
     }
 
     100% {
-        left: 0;
+        transform: translateY(-50%) translateX(0);
     }
 }
 
 
 .circle-home {
     background: radial-gradient(circle, transparent 59%, rgb(229, 228, 228) 60%);
-    border-radius: 50%;
+    border-radius: 100%;
 }
 
 .circle-home-1 {
     background: radial-gradient(circle, transparent 59%, rgba(241, 193, 193, 0.247) 50%);
     width: 400px;
-    height: 400px;
+    height: 370px;
     animation: moveFreelyLargeCircle 10s infinite alternate;
     bottom: 20px;
     left: -30px;
@@ -235,7 +230,7 @@ nav ul li a:focus {
 
 .circle-home-2 {
     width: 300px;
-    height: 300px;
+    height: 270px;
     background: radial-gradient(circle, transparent 59%, rgb(229, 228, 228) 50%);
     left: 0;
     top: 20px;
@@ -244,10 +239,10 @@ nav ul li a:focus {
 .circle-home-3 {
     width: 50px;
     height: 50px;
-    animation: moveRandomly 50s linear infinite;
+    animation: moveFreelySmallCircle 50s linear infinite;
     background: radial-gradient(circle, transparent 59%, rgba(241, 193, 193, 0.247) 50%);
-    top: 20px;
-    left: 50px;
+    top: 17px;
+    left: 20px;
 }
 
 @keyframes moveFreelyLargeCircle {
@@ -300,19 +295,19 @@ nav ul li a:focus {
     }
 
     25% {
-        transform: translate(20vw, 30vh);
+        transform: translate(10vw, 30vh);
     }
 
     50% {
-        transform: translate(40vw, -10vh);
+        transform: translate(20vw, -10vh);
     }
 
     75% {
-        transform: translate(70vw, 50vh);
+        transform: translate(15vw, 50vh);
     }
 
     100% {
-        transform: translate(100vw, 20vh);
+        transform: translate(5vw, 20vh);
     }
 }
 
@@ -431,6 +426,8 @@ nav ul li a:focus {
 
 .hero-container-main,
 .about-container-main {
+    /* watch out for the vh here for % or vh */
+    padding: 4rem 0;
     height: 100% !important;
 }
 
@@ -1024,7 +1021,7 @@ label {
     font-size: .8rem;
     color: #6c757d !important;
     position: absolute;
-    left: 50.7%;
+    left: 53%;
     top: 14%;
 }
 
@@ -1423,4 +1420,23 @@ form textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) !important;
+}
+
+/* THIS IS FOR THE FOCUS EFFECT ON THE INPUT FIELDS!!! */
+.styled-input::placeholder {
+    transition: all 0.3s ease !important;
+    pointer-events: none !important;
+}
+
+.styled-input:focus {
+    outline: none;
+    font-size: 16px !important;
+    transition: transform 0.3s ease, color 0.3s ease !important;
+    transform-origin: left top !important;
+}
+
+.styled-input:focus::placeholder,
+.styled-input:not(:placeholder-shown)::placeholder {
+    color: #ccc !important;
+    transform: translate(-5px, -15px) scale(0.9) !important;
 }
